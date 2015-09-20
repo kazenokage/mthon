@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<div class="logo"><img src="assets/img/mthon-logo.png"></div>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="assets/js/three.min.js"></script>
     <script src="assets/js/orbitcontrols.js"></script>
     <script src="assets/js/stellardata.json" type="text/javascript"></script>
@@ -25,6 +26,8 @@
 
 			var starspritemap = THREE.ImageUtils.loadTexture("assets/js/glow.png");
 
+			// draw the stars
+
       for (var i = 0; i < stellarobjects.stars.length; i++) {
         var material = new THREE.SpriteMaterial( { map: starspritemap, color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex, fog: true } );
         var sprite = new THREE.Sprite( material );
@@ -32,21 +35,42 @@
         scene.add( sprite );
       }
 
+			// draw the route
+
+			for (var i = 0; i< stellarobjects.stars.length/20; i++) {
+				if (i>0) {
+					var startPoint = new THREE.Vector3(stellarobjects.stars[i-1].x,stellarobjects.stars[i-1].y,stellarobjects.stars[i-1].z);
+					var endPoint   = new THREE.Vector3(stellarobjects.stars[i].x,stellarobjects.stars[i].y,stellarobjects.stars[i].z);
+					var direction = new THREE.Vector3().subVectors(endPoint, startPoint).normalize();
+					var arrow = new THREE.ArrowHelper(direction, startPoint, startPoint.distanceTo(endPoint), 0x271f55, 1 );
+					scene.add(arrow);
+				}
+			}
+
+			// create some global lightning
+
       var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
       scene.add( light );
 
-			camera.position.z = 100;
+			// default zoom of camera
 
-      controls = new THREE.OrbitControls( camera, renderer.domElement );
-			controls.enableDamping = false;
-			controls.dampingFactor = 0.25;
+			camera.position.z = 150;
 
 			var render = function () {
+				moveCamera();
 				requestAnimationFrame( render );
 				renderer.render(scene, camera);
 			};
 
+			var moveCamera = function() {
+				var timer = Date.now() * 0.00005;
+				camera.position.x = Math.cos( timer ) * 200;
+				camera.position.z = Math.sin( timer ) * 200;
+				camera.lookAt( new THREE.Vector3(0,0,0) );
+			}
+
 			render();
+
 		</script>
 	</body>
 </html>
