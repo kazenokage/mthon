@@ -4,7 +4,7 @@
 		<style>
 			body { margin: 0; background-image: url('assets/js/scene-bg.png');}
 			canvas { width: 100%; height: 100% }
-			.logo { z-index: 9999; bottom:0; left:0; position: absolute; margin-left:1em; margin-bottom: 1em;}
+			.logo { z-index: 9999; bottom:0; right:0; position: absolute; margin-right:1em; margin-bottom: 1em;}
 		</style>
 	</head>
 	<body>
@@ -26,14 +26,7 @@
 			var starspritemap = THREE.ImageUtils.loadTexture("assets/js/glow.png");
 
       for (var i = 0; i < stellarobjects.stars.length; i++) {
-        // var geo = new THREE.SphereGeometry(stellarobjects.stars[i].size, 5, 5);
-        // var mat = new THREE.MeshLambertMaterial( { color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex });
-        // var star = new THREE.Mesh( geo, mat );
-        // star.position.set(stellarobjects.stars[i].x,stellarobjects.stars[i].y,stellarobjects.stars[i].z);
-        // scene.add( star );
-
-        var map = starspritemap;
-        var material = new THREE.SpriteMaterial( { map: map, color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex, fog: true } );
+        var material = new THREE.SpriteMaterial( { map: starspritemap, color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex, fog: true } );
         var sprite = new THREE.Sprite( material );
         sprite.position.set(stellarobjects.stars[i].x,stellarobjects.stars[i].y,stellarobjects.stars[i].z)
         scene.add( sprite );
@@ -45,17 +38,11 @@
 			camera.position.z = 100;
 
       controls = new THREE.OrbitControls( camera, renderer.domElement );
-				//controls.addEventListener( 'change', render ); // add this only if there is no animation loop (requestAnimationFrame)
-				controls.enableDamping = true;
-				controls.dampingFactor = 0.25;
-				controls.enableZoom = true;
+			controls.enableDamping = false;
+			controls.dampingFactor = 0.25;
 
 			var render = function () {
 				requestAnimationFrame( render );
-
-				// cube.rotation.x += 0.1;
-				// cube.rotation.y += 0.1;
-
 				renderer.render(scene, camera);
 			};
 
