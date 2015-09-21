@@ -2,7 +2,7 @@
 	<head>
 		<title>mthon starfield</title>
 		<style>
-			body { margin: 0; background-image: url('assets/js/scene-bg.png');}
+			body { margin: 0; background-image: url('assets/js/scene-bg.png');background-size: 100%;}
 			canvas { width: 100%; height: 100% }
 			.logo { z-index: 9999; bottom:0; right:0; position: absolute; margin-right:1em; margin-bottom: 1em;}
 		</style>
@@ -15,9 +15,14 @@
     <script src="assets/js/stellardata.json" type="text/javascript"></script>
 		<script>
 
+			// scene setup
 			var scene = new THREE.Scene();
+			scene.fog = new THREE.Fog(0x110329, 180, 350);
+
+			// camera setup
 			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
 
+			// renderer setup
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
@@ -29,28 +34,42 @@
 			// draw the stars
 
       for (var i = 0; i < stellarobjects.stars.length; i++) {
-        var material = new THREE.SpriteMaterial( { map: starspritemap, color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex, fog: true } );
+        var material = new THREE.SpriteMaterial( { map: starspritemap, color: planetarycolor.color[stellarobjects.stars[i].type - 1].hex, fog: true, blending: THREE.AdditiveBlending } );
         var sprite = new THREE.Sprite( material );
-        sprite.position.set(stellarobjects.stars[i].x,stellarobjects.stars[i].y,stellarobjects.stars[i].z)
-        scene.add( sprite );
+        sprite.position.set(stellarobjects.stars[i].position.x,stellarobjects.stars[i].position.y,stellarobjects.stars[i].position.z)
+				sprite.scale.x = sprite.scale.y = stellarobjects.stars[i].size;
+				scene.add( sprite );
       }
+
+			// // draw a comet
+			//
+			// var mat = new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/js/comet-texture.png"), blending: THREE.AdditiveBlending });
+			// var comet = new THREE.Sprite( mat );
+			// comet.position.set(0,0,0);
+			// comet.scale.x = 30;
+			// comet.scale.y = 10;
+			// scene.add( comet );
 
 			// draw the route
 
 			for (var i = 0; i< stellarobjects.stars.length/20; i++) {
 				if (i>0) {
-					var startPoint = new THREE.Vector3(stellarobjects.stars[i-1].x,stellarobjects.stars[i-1].y,stellarobjects.stars[i-1].z);
-					var endPoint   = new THREE.Vector3(stellarobjects.stars[i].x,stellarobjects.stars[i].y,stellarobjects.stars[i].z);
+					var startPoint = new THREE.Vector3(stellarobjects.stars[i-1].position.x,stellarobjects.stars[i-1].position.y,stellarobjects.stars[i-1].position.z);
+					var endPoint   = new THREE.Vector3(stellarobjects.stars[i].position.x,stellarobjects.stars[i].position.y,stellarobjects.stars[i].position.z);
 					var direction = new THREE.Vector3().subVectors(endPoint, startPoint).normalize();
-					var arrow = new THREE.ArrowHelper(direction, startPoint, startPoint.distanceTo(endPoint), 0x271f55, 1 );
+					var arrow = new THREE.ArrowHelper(direction, startPoint, startPoint.distanceTo(endPoint), 0x271f55, 3 );
 					scene.add(arrow);
 				}
 			}
 
-			// create some global lightning
+			// create some lightning
 
       var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
       scene.add( light );
+
+			var pointlight = new THREE.PointLight( 0xff0000, 1, 100 );
+			light.position.set( 0, 0, 0 );
+			scene.add( pointlight );
 
 			// default zoom of camera
 
