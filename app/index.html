@@ -17,7 +17,7 @@
 
 			// scene setup
 			var scene = new THREE.Scene();
-			scene.fog = new THREE.Fog(0x110329, 180, 350);
+			scene.fog = new THREE.Fog(0x110329, 200, 350);
 
 			// camera setup
 			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -57,7 +57,7 @@
 					var startPoint = new THREE.Vector3(stellarobjects.stars[i-1].position.x,stellarobjects.stars[i-1].position.y,stellarobjects.stars[i-1].position.z);
 					var endPoint   = new THREE.Vector3(stellarobjects.stars[i].position.x,stellarobjects.stars[i].position.y,stellarobjects.stars[i].position.z);
 					var direction = new THREE.Vector3().subVectors(endPoint, startPoint).normalize();
-					var arrow = new THREE.ArrowHelper(direction, startPoint, startPoint.distanceTo(endPoint), 0x271f55, 3 );
+					var arrow = new THREE.ArrowHelper(direction, startPoint, startPoint.distanceTo(endPoint), 0x271f55, 2 );
 					scene.add(arrow);
 				}
 			}
