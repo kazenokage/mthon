@@ -1,0 +1,21 @@
+{
+  "name": "timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "timer.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "multer": "^1.0.5",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.43",
+    "chokidar": "^1.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
