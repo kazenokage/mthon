@@ -1,0 +1,3302 @@
+{"stars": [{
+    "_id": 2,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 33,
+      "y": 69,
+      "z": 91
+    },
+    "direction": {
+      "x": -9,
+      "y": -5,
+      "z": 1
+    },
+    "velocity": 0.4941,
+    "resource": {
+      "type": "Carbon",
+      "amount": 199
+    },
+    "nghbrs": [10, 61, 93, 189, 263, 432, 692]
+  }, {
+    "_id": 5,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 93,
+      "y": 18,
+      "z": 70
+    },
+    "direction": {
+      "x": -9,
+      "y": -3,
+      "z": -7
+    },
+    "velocity": 0.1178,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 365
+    },
+    "nghbrs": []
+  }, {
+    "_id": 6,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 88,
+      "y": 62,
+      "z": 97
+    },
+    "direction": {
+      "x": -2,
+      "y": -8,
+      "z": -8
+    },
+    "velocity": 0.2329,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 34
+    },
+    "nghbrs": [32, 535]
+  }, {
+    "_id": 10,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 52,
+      "y": 66,
+      "z": 90
+    },
+    "direction": {
+      "x": 4,
+      "y": -4,
+      "z": -9
+    },
+    "velocity": 0.1228,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 233
+    },
+    "nghbrs": [2, 86, 263, 432, 577, 631]
+  }, {
+    "_id": 14,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 34,
+      "y": 95,
+      "z": 15
+    },
+    "direction": {
+      "x": 5,
+      "y": -9,
+      "z": -6
+    },
+    "velocity": 0.5274,
+    "resource": {
+      "type": "Helium",
+      "amount": 139
+    },
+    "nghbrs": [186, 545, 702]
+  }, {
+    "_id": 15,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 74,
+      "y": 93,
+      "z": 9
+    },
+    "direction": {
+      "x": 8,
+      "y": 5,
+      "z": -8
+    },
+    "velocity": 0.9972,
+    "resource": {
+      "type": "Helium",
+      "amount": 358
+    },
+    "nghbrs": [223, 264, 365, 656]
+  }, {
+    "_id": 22,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 41,
+      "y": 33,
+      "z": 59
+    },
+    "direction": {
+      "x": -3,
+      "y": -2,
+      "z": 3
+    },
+    "velocity": 0.5149,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 5
+    },
+    "nghbrs": [29, 119, 379, 469, 514, 579, 685]
+  }, {
+    "_id": 24,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 44,
+      "y": 30,
+      "z": 7
+    },
+    "direction": {
+      "x": -6,
+      "y": 1,
+      "z": 3
+    },
+    "velocity": 0.7579,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 125
+    },
+    "nghbrs": [179, 444, 629]
+  }, {
+    "_id": 25,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 77,
+      "y": 84,
+      "z": 37
+    },
+    "direction": {
+      "x": -2,
+      "y": 10,
+      "z": -4
+    },
+    "velocity": 0.1893,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 411
+    },
+    "nghbrs": [227, 659]
+  }, {
+    "_id": 29,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 48,
+      "y": 23,
+      "z": 71
+    },
+    "direction": {
+      "x": -9,
+      "y": 7,
+      "z": -7
+    },
+    "velocity": 0.5871,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 443
+    },
+    "nghbrs": [22, 346, 512, 685]
+  }, {
+    "_id": 32,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 92,
+      "y": 68,
+      "z": 92
+    },
+    "direction": {
+      "x": 8,
+      "y": 1,
+      "z": 6
+    },
+    "velocity": 0.8521,
+    "resource": {
+      "type": "Carbon",
+      "amount": 439
+    },
+    "nghbrs": [6]
+  }, {
+    "_id": 33,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 22,
+      "y": 7,
+      "z": 69
+    },
+    "direction": {
+      "x": -1,
+      "y": -10,
+      "z": 4
+    },
+    "velocity": 0.603,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 329
+    },
+    "nghbrs": [305, 319, 322, 503, 533, 622]
+  }, {
+    "_id": 40,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 52,
+      "y": 28,
+      "z": 42
+    },
+    "direction": {
+      "x": 3,
+      "y": 9,
+      "z": 7
+    },
+    "velocity": 0.4429,
+    "resource": {
+      "type": "Helium",
+      "amount": 45
+    },
+    "nghbrs": [100, 119, 225, 285, 314, 379, 452]
+  }, {
+    "_id": 49,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 63,
+      "y": 25,
+      "z": 18
+    },
+    "direction": {
+      "x": -7,
+      "y": 9,
+      "z": -4
+    },
+    "velocity": 0.6515,
+    "resource": {
+      "type": "Carbon",
+      "amount": 35
+    },
+    "nghbrs": [90, 175, 179, 200, 225, 253, 342, 345, 406, 440, 463, 478, 595, 612, 629, 661, 668]
+  }, {
+    "_id": 51,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 57,
+      "y": 69,
+      "z": 57
+    },
+    "direction": {
+      "x": -10,
+      "y": 6,
+      "z": 4
+    },
+    "velocity": 0.4786,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 151
+    },
+    "nghbrs": [55, 73, 195, 457]
+  }, {
+    "_id": 55,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 54,
+      "y": 52,
+      "z": 63
+    },
+    "direction": {
+      "x": 7,
+      "y": -3,
+      "z": -6
+    },
+    "velocity": 0.5164,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 269
+    },
+    "nghbrs": [51, 195, 469, 514]
+  }, {
+    "_id": 61,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 24,
+      "y": 60,
+      "z": 79
+    },
+    "direction": {
+      "x": 2,
+      "y": -9,
+      "z": 9
+    },
+    "velocity": 0.9019,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 466
+    },
+    "nghbrs": [2, 93, 352, 432, 579, 623]
+  }, {
+    "_id": 72,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 66,
+      "y": 92,
+      "z": 72
+    },
+    "direction": {
+      "x": -2,
+      "y": -10,
+      "z": 7
+    },
+    "velocity": 0.8287,
+    "resource": {
+      "type": "Helium",
+      "amount": 307
+    },
+    "nghbrs": [334, 401, 525, 627]
+  }, {
+    "_id": 73,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 48,
+      "y": 74,
+      "z": 43
+    },
+    "direction": {
+      "x": 5,
+      "y": 6,
+      "z": 1
+    },
+    "velocity": 0.755,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 444
+    },
+    "nghbrs": [51, 180, 196, 457, 695]
+  }, {
+    "_id": 86,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 53,
+      "y": 64,
+      "z": 90
+    },
+    "direction": {
+      "x": -4,
+      "y": -10,
+      "z": 8
+    },
+    "velocity": 0.194,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 210
+    },
+    "nghbrs": [10, 432, 577, 631]
+  }, {
+    "_id": 90,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 69,
+      "y": 42,
+      "z": 19
+    },
+    "direction": {
+      "x": 7,
+      "y": -3,
+      "z": 10
+    },
+    "velocity": 0.6694,
+    "resource": {
+      "type": "Carbon",
+      "amount": 30
+    },
+    "nghbrs": [49, 139, 175, 253, 342, 406, 440, 454, 563, 629, 651, 661]
+  }, {
+    "_id": 91,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 68,
+      "y": 92,
+      "z": 95
+    },
+    "direction": {
+      "x": -6,
+      "y": 3,
+      "z": 1
+    },
+    "velocity": 0.8706,
+    "resource": {
+      "type": "Carbon",
+      "amount": 116
+    },
+    "nghbrs": [401, 471]
+  }, {
+    "_id": 93,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 32,
+      "y": 73,
+      "z": 80
+    },
+    "direction": {
+      "x": 1,
+      "y": -4,
+      "z": 6
+    },
+    "velocity": 0.8268,
+    "resource": {
+      "type": "Carbon",
+      "amount": 363
+    },
+    "nghbrs": [2, 61, 189, 352, 432, 582, 692]
+  }, {
+    "_id": 97,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 2,
+      "y": 74,
+      "z": 94
+    },
+    "direction": {
+      "x": -2,
+      "y": 2,
+      "z": 5
+    },
+    "velocity": 0.3382,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 84
+    },
+    "nghbrs": [189, 241, 385]
+  }, {
+    "_id": 99,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 61,
+      "y": 99,
+      "z": 24
+    },
+    "direction": {
+      "x": 5,
+      "y": 1,
+      "z": 4
+    },
+    "velocity": 0.2497,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 182
+    },
+    "nghbrs": [186, 264]
+  }, {
+    "_id": 100,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 37,
+      "y": 17,
+      "z": 45
+    },
+    "direction": {
+      "x": -2,
+      "y": 5,
+      "z": 10
+    },
+    "velocity": 0.2526,
+    "resource": {
+      "type": "Carbon",
+      "amount": 483
+    },
+    "nghbrs": [40, 119, 379, 533, 622]
+  }, {
+    "_id": 103,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 80,
+      "y": 52,
+      "z": 5
+    },
+    "direction": {
+      "x": -6,
+      "y": 4,
+      "z": 7
+    },
+    "velocity": 0.7982,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 494
+    },
+    "nghbrs": [228, 394, 454, 651, 658]
+  }, {
+    "_id": 108,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 84,
+      "y": 41,
+      "z": 91
+    },
+    "direction": {
+      "x": -5,
+      "y": 5,
+      "z": -7
+    },
+    "velocity": 0.562,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 452
+    },
+    "nghbrs": [455, 535]
+  }, {
+    "_id": 111,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 1,
+      "y": 9,
+      "z": 19
+    },
+    "direction": {
+      "x": -1,
+      "y": 3,
+      "z": 5
+    },
+    "velocity": 0.6831,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 433
+    },
+    "nghbrs": [167, 396, 559]
+  }, {
+    "_id": 114,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 38,
+      "y": 96,
+      "z": 92
+    },
+    "direction": {
+      "x": 3,
+      "y": 7,
+      "z": 4
+    },
+    "velocity": 0.0254,
+    "resource": {
+      "type": "Helium",
+      "amount": 270
+    },
+    "nghbrs": [263, 461, 471, 692]
+  }, {
+    "_id": 117,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 11,
+      "y": 43,
+      "z": 13
+    },
+    "direction": {
+      "x": -2,
+      "y": 3,
+      "z": 5
+    },
+    "velocity": 0.2844,
+    "resource": {
+      "type": "Helium",
+      "amount": 322
+    },
+    "nghbrs": [165, 182, 660, 665]
+  }, {
+    "_id": 119,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 38,
+      "y": 33,
+      "z": 54
+    },
+    "direction": {
+      "x": 3,
+      "y": 9,
+      "z": -4
+    },
+    "velocity": 0.3148,
+    "resource": {
+      "type": "Helium",
+      "amount": 3
+    },
+    "nghbrs": [22, 40, 100, 379, 469]
+  }, {
+    "_id": 126,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 83,
+      "y": 26,
+      "z": 11
+    },
+    "direction": {
+      "x": -1,
+      "y": -6,
+      "z": 2
+    },
+    "velocity": 0.3398,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 158
+    },
+    "nghbrs": [175, 345, 406, 563, 612, 624, 661]
+  }, {
+    "_id": 134,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 35,
+      "y": 15,
+      "z": 24
+    },
+    "direction": {
+      "x": -7,
+      "y": 5,
+      "z": 10
+    },
+    "velocity": 0.3284,
+    "resource": {
+      "type": "Helium",
+      "amount": 35
+    },
+    "nghbrs": [444, 595, 613, 668, 724]
+  }, {
+    "_id": 139,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 55,
+      "y": 43,
+      "z": 26
+    },
+    "direction": {
+      "x": 4,
+      "y": -4,
+      "z": 9
+    },
+    "velocity": 0.8381,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 164
+    },
+    "nghbrs": [90, 175, 179, 285, 329, 342, 440]
+  }, {
+    "_id": 160,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 77,
+      "y": 5,
+      "z": 33
+    },
+    "direction": {
+      "x": 2,
+      "y": 8,
+      "z": -6
+    },
+    "velocity": 0.5823,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 423
+    },
+    "nghbrs": [200, 452, 536, 602]
+  }, {
+    "_id": 165,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 26,
+      "y": 43,
+      "z": 21
+    },
+    "direction": {
+      "x": -9,
+      "y": -8,
+      "z": 9
+    },
+    "velocity": 0.2837,
+    "resource": {
+      "type": "Helium",
+      "amount": 472
+    },
+    "nghbrs": [117, 329, 660]
+  }, {
+    "_id": 167,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 2,
+      "y": 9,
+      "z": 5
+    },
+    "direction": {
+      "x": -3,
+      "y": 6,
+      "z": 5
+    },
+    "velocity": 0.37,
+    "resource": {
+      "type": "Helium",
+      "amount": 282
+    },
+    "nghbrs": [111, 559]
+  }, {
+    "_id": 169,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 8,
+      "y": 77,
+      "z": 48
+    },
+    "direction": {
+      "x": -9,
+      "y": -6,
+      "z": 8
+    },
+    "velocity": 0.3805,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 314
+    },
+    "nghbrs": [235, 313, 446, 610]
+  }, {
+    "_id": 175,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 67,
+      "y": 37,
+      "z": 13
+    },
+    "direction": {
+      "x": 8,
+      "y": -8,
+      "z": -5
+    },
+    "velocity": 0.3355,
+    "resource": {
+      "type": "Helium",
+      "amount": 145
+    },
+    "nghbrs": [49, 90, 126, 139, 342, 345, 406, 440, 454, 563, 612, 629, 651, 661]
+  }, {
+    "_id": 179,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 49,
+      "y": 33,
+      "z": 22
+    },
+    "direction": {
+      "x": -5,
+      "y": -5,
+      "z": 2
+    },
+    "velocity": 0.3262,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 116
+    },
+    "nghbrs": [24, 49, 139, 285, 342, 440, 629]
+  }, {
+    "_id": 180,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 51,
+      "y": 65,
+      "z": 35
+    },
+    "direction": {
+      "x": -6,
+      "y": -5,
+      "z": 10
+    },
+    "velocity": 0.8278,
+    "resource": {
+      "type": "Helium",
+      "amount": 74
+    },
+    "nghbrs": [73, 196, 695]
+  }, {
+    "_id": 182,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 7,
+      "y": 59,
+      "z": 12
+    },
+    "direction": {
+      "x": -1,
+      "y": 3,
+      "z": -3
+    },
+    "velocity": 0.167,
+    "resource": {
+      "type": "Carbon",
+      "amount": 354
+    },
+    "nghbrs": [117, 580, 665, 684]
+  }, {
+    "_id": 186,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 50,
+      "y": 92,
+      "z": 14
+    },
+    "direction": {
+      "x": -6,
+      "y": 6,
+      "z": 7
+    },
+    "velocity": 0.8741,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 407
+    },
+    "nghbrs": [14, 99, 264, 365]
+  }, {
+    "_id": 189,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 17,
+      "y": 77,
+      "z": 87
+    },
+    "direction": {
+      "x": 5,
+      "y": -3,
+      "z": -3
+    },
+    "velocity": 0.8482,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 481
+    },
+    "nghbrs": [2, 93, 97, 241]
+  }, {
+    "_id": 195,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 61,
+      "y": 68,
+      "z": 66
+    },
+    "direction": {
+      "x": -1,
+      "y": 1,
+      "z": 9
+    },
+    "velocity": 0.5126,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 407
+    },
+    "nghbrs": [51, 55, 457, 577, 627]
+  }, {
+    "_id": 196,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 41,
+      "y": 73,
+      "z": 44
+    },
+    "direction": {
+      "x": -5,
+      "y": 7,
+      "z": -3
+    },
+    "velocity": 0.3283,
+    "resource": {
+      "type": "Carbon",
+      "amount": 208
+    },
+    "nghbrs": [73, 180]
+  }, {
+    "_id": 198,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 41,
+      "y": 18,
+      "z": 95
+    },
+    "direction": {
+      "x": 4,
+      "y": 2,
+      "z": -5
+    },
+    "velocity": 0.9149,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 440
+    },
+    "nghbrs": []
+  }, {
+    "_id": 200,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 62,
+      "y": 7,
+      "z": 20
+    },
+    "direction": {
+      "x": 10,
+      "y": 2,
+      "z": 6
+    },
+    "velocity": 0.8643,
+    "resource": {
+      "type": "Carbon",
+      "amount": 405
+    },
+    "nghbrs": [49, 160, 314, 345, 463, 478, 595, 602, 612, 668]
+  }, {
+    "_id": 205,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 0,
+      "y": 1,
+      "z": 66
+    },
+    "direction": {
+      "x": 4,
+      "y": -5,
+      "z": 9
+    },
+    "velocity": 0.4711,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 23
+    },
+    "nghbrs": [305]
+  }, {
+    "_id": 207,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 55,
+      "y": 8,
+      "z": 57
+    },
+    "direction": {
+      "x": -1,
+      "y": -7,
+      "z": -10
+    },
+    "velocity": 0.5985,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 170
+    },
+    "nghbrs": [346, 512]
+  }, {
+    "_id": 223,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 71,
+      "y": 86,
+      "z": 11
+    },
+    "direction": {
+      "x": 2,
+      "y": -10,
+      "z": -10
+    },
+    "velocity": 0.9876,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 210
+    },
+    "nghbrs": [15, 227, 264, 365, 656]
+  }, {
+    "_id": 225,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 65,
+      "y": 22,
+      "z": 37
+    },
+    "direction": {
+      "x": 1,
+      "y": 4,
+      "z": 4
+    },
+    "velocity": 0.4392,
+    "resource": {
+      "type": "Carbon",
+      "amount": 160
+    },
+    "nghbrs": [40, 49, 253, 314, 452, 661]
+  }, {
+    "_id": 227,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 75,
+      "y": 81,
+      "z": 26
+    },
+    "direction": {
+      "x": 7,
+      "y": 6,
+      "z": -1
+    },
+    "velocity": 0.2269,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 189
+    },
+    "nghbrs": [25, 223]
+  }, {
+    "_id": 228,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 91,
+      "y": 52,
+      "z": 19
+    },
+    "direction": {
+      "x": 10,
+      "y": 7,
+      "z": -10
+    },
+    "velocity": 0.9182,
+    "resource": {
+      "type": "Carbon",
+      "amount": 364
+    },
+    "nghbrs": [103, 394, 563, 658]
+  }, {
+    "_id": 235,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 16,
+      "y": 84,
+      "z": 35
+    },
+    "direction": {
+      "x": -6,
+      "y": 1,
+      "z": -7
+    },
+    "velocity": 0.5392,
+    "resource": {
+      "type": "Carbon",
+      "amount": 64
+    },
+    "nghbrs": [169, 244, 313, 576]
+  }, {
+    "_id": 241,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 6,
+      "y": 76,
+      "z": 84
+    },
+    "direction": {
+      "x": -1,
+      "y": -3,
+      "z": 6
+    },
+    "velocity": 0.7131,
+    "resource": {
+      "type": "Helium",
+      "amount": 95
+    },
+    "nghbrs": [97, 189]
+  }, {
+    "_id": 244,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 22,
+      "y": 73,
+      "z": 25
+    },
+    "direction": {
+      "x": 7,
+      "y": 3,
+      "z": 1
+    },
+    "velocity": 0.3706,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 483
+    },
+    "nghbrs": [235, 313, 331, 576, 580]
+  }, {
+    "_id": 253,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 71,
+      "y": 31,
+      "z": 32
+    },
+    "direction": {
+      "x": -2,
+      "y": 9,
+      "z": -5
+    },
+    "velocity": 0.022,
+    "resource": {
+      "type": "Carbon",
+      "amount": 322
+    },
+    "nghbrs": [49, 90, 225, 342, 406, 452, 563, 612, 661]
+  }, {
+    "_id": 263,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 45,
+      "y": 82,
+      "z": 96
+    },
+    "direction": {
+      "x": -3,
+      "y": 1,
+      "z": 2
+    },
+    "velocity": 0.5721,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 373
+    },
+    "nghbrs": [2, 10, 114, 461, 471, 692]
+  }, {
+    "_id": 264,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 57,
+      "y": 97,
+      "z": 15
+    },
+    "direction": {
+      "x": 6,
+      "y": 2,
+      "z": -10
+    },
+    "velocity": 0.2359,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 353
+    },
+    "nghbrs": [15, 99, 186, 223, 365, 656]
+  }, {
+    "_id": 275,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 43,
+      "y": 0,
+      "z": 73
+    },
+    "direction": {
+      "x": 8,
+      "y": -5,
+      "z": -9
+    },
+    "velocity": 0.9044,
+    "resource": {
+      "type": "Carbon",
+      "amount": 326
+    },
+    "nghbrs": [319, 346]
+  }, {
+    "_id": 278,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 22,
+      "y": 19,
+      "z": 6
+    },
+    "direction": {
+      "x": 0,
+      "y": -4,
+      "z": -7
+    },
+    "velocity": 0.6354,
+    "resource": {
+      "type": "Carbon",
+      "amount": 261
+    },
+    "nghbrs": [444, 559]
+  }, {
+    "_id": 281,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 70,
+      "y": 10,
+      "z": 89
+    },
+    "direction": {
+      "x": 5,
+      "y": -4,
+      "z": 5
+    },
+    "velocity": 0.218,
+    "resource": {
+      "type": "Carbon",
+      "amount": 310
+    },
+    "nghbrs": [532]
+  }, {
+    "_id": 285,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 52,
+      "y": 41,
+      "z": 39
+    },
+    "direction": {
+      "x": -1,
+      "y": -9,
+      "z": -1
+    },
+    "velocity": 0.0767,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 463
+    },
+    "nghbrs": [40, 139, 179, 469]
+  }, {
+    "_id": 301,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 1,
+      "y": 17,
+      "z": 78
+    },
+    "direction": {
+      "x": -7,
+      "y": -3,
+      "z": 1
+    },
+    "velocity": 0.3472,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 35
+    },
+    "nghbrs": []
+  }, {
+    "_id": 305,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 8,
+      "y": 0,
+      "z": 60
+    },
+    "direction": {
+      "x": 6,
+      "y": 5,
+      "z": 3
+    },
+    "velocity": 0.7544,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 493
+    },
+    "nghbrs": [33, 205, 318, 503, 510, 622, 686]
+  }, {
+    "_id": 310,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 68,
+      "y": 38,
+      "z": 76
+    },
+    "direction": {
+      "x": 10,
+      "y": 10,
+      "z": 4
+    },
+    "velocity": 0.5215,
+    "resource": {
+      "type": "Carbon",
+      "amount": 496
+    },
+    "nghbrs": [514, 535, 729]
+  }, {
+    "_id": 313,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 14,
+      "y": 78,
+      "z": 42
+    },
+    "direction": {
+      "x": 6,
+      "y": 3,
+      "z": -7
+    },
+    "velocity": 0.9994,
+    "resource": {
+      "type": "Carbon",
+      "amount": 466
+    },
+    "nghbrs": [169, 235, 244, 446, 576, 610]
+  }, {
+    "_id": 314,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 57,
+      "y": 11,
+      "z": 35
+    },
+    "direction": {
+      "x": 0,
+      "y": 0,
+      "z": 2
+    },
+    "velocity": 0.2959,
+    "resource": {
+      "type": "Carbon",
+      "amount": 5
+    },
+    "nghbrs": [40, 200, 225, 452, 463, 668]
+  }, {
+    "_id": 318,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 13,
+      "y": 10,
+      "z": 46
+    },
+    "direction": {
+      "x": -5,
+      "y": 0,
+      "z": 6
+    },
+    "velocity": 0.655,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 176
+    },
+    "nghbrs": [305, 330, 503, 510, 533, 622, 686]
+  }, {
+    "_id": 319,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 32,
+      "y": 7,
+      "z": 73
+    },
+    "direction": {
+      "x": -7,
+      "y": 3,
+      "z": -5
+    },
+    "velocity": 0.9949,
+    "resource": {
+      "type": "Helium",
+      "amount": 93
+    },
+    "nghbrs": [33, 275, 346, 533]
+  }, {
+    "_id": 322,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 20,
+      "y": 23,
+      "z": 80
+    },
+    "direction": {
+      "x": -9,
+      "y": 6,
+      "z": -6
+    },
+    "velocity": 0.3041,
+    "resource": {
+      "type": "Helium",
+      "amount": 470
+    },
+    "nghbrs": [33, 359]
+  }, {
+    "_id": 329,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 41,
+      "y": 54,
+      "z": 18
+    },
+    "direction": {
+      "x": -3,
+      "y": -7,
+      "z": 2
+    },
+    "velocity": 0.3885,
+    "resource": {
+      "type": "Carbon",
+      "amount": 96
+    },
+    "nghbrs": [139, 165, 331, 355, 434]
+  }, {
+    "_id": 330,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 4,
+      "y": 22,
+      "z": 50
+    },
+    "direction": {
+      "x": 2,
+      "y": -5,
+      "z": 0
+    },
+    "velocity": 0.2367,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 338
+    },
+    "nghbrs": [318, 510, 686]
+  }, {
+    "_id": 331,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 33,
+      "y": 63,
+      "z": 12
+    },
+    "direction": {
+      "x": -5,
+      "y": 1,
+      "z": -1
+    },
+    "velocity": 0.4114,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 307
+    },
+    "nghbrs": [244, 329, 355, 434]
+  }, {
+    "_id": 334,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 51,
+      "y": 89,
+      "z": 67
+    },
+    "direction": {
+      "x": -8,
+      "y": 4,
+      "z": -5
+    },
+    "velocity": 0.8739,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 8
+    },
+    "nghbrs": [72, 461, 525, 582]
+  }, {
+    "_id": 342,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 66,
+      "y": 38,
+      "z": 14
+    },
+    "direction": {
+      "x": 10,
+      "y": 1,
+      "z": 2
+    },
+    "velocity": 0.0785,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 277
+    },
+    "nghbrs": [49, 90, 139, 175, 179, 253, 345, 406, 440, 454, 563, 612, 629, 651, 661]
+  }, {
+    "_id": 345,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 66,
+      "y": 20,
+      "z": 9
+    },
+    "direction": {
+      "x": -5,
+      "y": -1,
+      "z": 4
+    },
+    "velocity": 0.1417,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 368
+    },
+    "nghbrs": [49, 126, 175, 200, 342, 406, 463, 478, 612, 624, 629]
+  }, {
+    "_id": 346,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 46,
+      "y": 15,
+      "z": 71
+    },
+    "direction": {
+      "x": -10,
+      "y": 5,
+      "z": 9
+    },
+    "velocity": 0.9479,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 491
+    },
+    "nghbrs": [29, 207, 275, 319, 512, 685]
+  }, {
+    "_id": 352,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 27,
+      "y": 71,
+      "z": 70
+    },
+    "direction": {
+      "x": 10,
+      "y": -10,
+      "z": 1
+    },
+    "velocity": 0.2837,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 226
+    },
+    "nghbrs": [61, 93, 582, 623]
+  }, {
+    "_id": 355,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 42,
+      "y": 71,
+      "z": 9
+    },
+    "direction": {
+      "x": -7,
+      "y": -5,
+      "z": 4
+    },
+    "velocity": 0.1351,
+    "resource": {
+      "type": "Helium",
+      "amount": 39
+    },
+    "nghbrs": [329, 331, 434]
+  }, {
+    "_id": 359,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 21,
+      "y": 32,
+      "z": 74
+    },
+    "direction": {
+      "x": 1,
+      "y": 5,
+      "z": -5
+    },
+    "velocity": 0.2771,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 99
+    },
+    "nghbrs": [322, 499]
+  }, {
+    "_id": 360,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 96,
+      "y": 99,
+      "z": 72
+    },
+    "direction": {
+      "x": -7,
+      "y": 9,
+      "z": -4
+    },
+    "velocity": 0.567,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 143
+    },
+    "nghbrs": [504, 574]
+  }, {
+    "_id": 365,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 66,
+      "y": 95,
+      "z": 4
+    },
+    "direction": {
+      "x": 8,
+      "y": -2,
+      "z": 0
+    },
+    "velocity": 0.1627,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 50
+    },
+    "nghbrs": [15, 186, 223, 264, 656]
+  }, {
+    "_id": 379,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 36,
+      "y": 29,
+      "z": 52
+    },
+    "direction": {
+      "x": -8,
+      "y": -2,
+      "z": -8
+    },
+    "velocity": 0.5091,
+    "resource": {
+      "type": "Helium",
+      "amount": 421
+    },
+    "nghbrs": [22, 40, 100, 119, 533]
+  }, {
+    "_id": 385,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 11,
+      "y": 57,
+      "z": 96
+    },
+    "direction": {
+      "x": 9,
+      "y": 5,
+      "z": 9
+    },
+    "velocity": 0.407,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 278
+    },
+    "nghbrs": [97]
+  }, {
+    "_id": 394,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 98,
+      "y": 54,
+      "z": 2
+    },
+    "direction": {
+      "x": 1,
+      "y": 6,
+      "z": -6
+    },
+    "velocity": 0.7006,
+    "resource": {
+      "type": "Helium",
+      "amount": 408
+    },
+    "nghbrs": [103, 228, 658]
+  }, {
+    "_id": 396,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 10,
+      "y": 19,
+      "z": 23
+    },
+    "direction": {
+      "x": 2,
+      "y": -10,
+      "z": 10
+    },
+    "velocity": 0.6651,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 119
+    },
+    "nghbrs": [111, 559, 660]
+  }, {
+    "_id": 401,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 70,
+      "y": 89,
+      "z": 82
+    },
+    "direction": {
+      "x": 7,
+      "y": -8,
+      "z": -1
+    },
+    "velocity": 0.8392,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 50
+    },
+    "nghbrs": [72, 91, 525, 574, 627]
+  }, {
+    "_id": 406,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 74,
+      "y": 24,
+      "z": 15
+    },
+    "direction": {
+      "x": -5,
+      "y": 3,
+      "z": -7
+    },
+    "velocity": 0.7637,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 172
+    },
+    "nghbrs": [49, 90, 126, 175, 253, 342, 345, 478, 563, 612, 624, 629, 661]
+  }, {
+    "_id": 419,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 94,
+      "y": 97,
+      "z": 25
+    },
+    "direction": {
+      "x": -6,
+      "y": 4,
+      "z": 3
+    },
+    "velocity": 0.9785,
+    "resource": {
+      "type": "Carbon",
+      "amount": 453
+    },
+    "nghbrs": []
+  }, {
+    "_id": 425,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 14,
+      "y": 55,
+      "z": 58
+    },
+    "direction": {
+      "x": -2,
+      "y": -4,
+      "z": -7
+    },
+    "velocity": 0.4806,
+    "resource": {
+      "type": "Helium",
+      "amount": 140
+    },
+    "nghbrs": [446, 477, 623, 696]
+  }, {
+    "_id": 432,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 37,
+      "y": 58,
+      "z": 85
+    },
+    "direction": {
+      "x": -3,
+      "y": 9,
+      "z": 2
+    },
+    "velocity": 0.1644,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 469
+    },
+    "nghbrs": [2, 10, 61, 86, 93, 579, 591]
+  }, {
+    "_id": 434,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 34,
+      "y": 62,
+      "z": 12
+    },
+    "direction": {
+      "x": 3,
+      "y": 2,
+      "z": -7
+    },
+    "velocity": 0.4359,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 324
+    },
+    "nghbrs": [329, 331, 355]
+  }, {
+    "_id": 440,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 63,
+      "y": 42,
+      "z": 15
+    },
+    "direction": {
+      "x": -10,
+      "y": 9,
+      "z": -1
+    },
+    "velocity": 0.9535,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 251
+    },
+    "nghbrs": [49, 90, 139, 175, 179, 342, 454, 563, 629, 651]
+  }, {
+    "_id": 444,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 34,
+      "y": 20,
+      "z": 13
+    },
+    "direction": {
+      "x": -4,
+      "y": -4,
+      "z": 2
+    },
+    "velocity": 0.8142,
+    "resource": {
+      "type": "Helium",
+      "amount": 236
+    },
+    "nghbrs": [24, 134, 278, 595, 613, 722]
+  }, {
+    "_id": 446,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 14,
+      "y": 65,
+      "z": 48
+    },
+    "direction": {
+      "x": -3,
+      "y": 5,
+      "z": -4
+    },
+    "velocity": 0.5739,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 155
+    },
+    "nghbrs": [169, 313, 425, 477, 610, 623, 696]
+  }, {
+    "_id": 452,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 66,
+      "y": 18,
+      "z": 42
+    },
+    "direction": {
+      "x": -3,
+      "y": -3,
+      "z": 6
+    },
+    "velocity": 0.8841,
+    "resource": {
+      "type": "Carbon",
+      "amount": 423
+    },
+    "nghbrs": [40, 160, 225, 253, 314, 661]
+  }, {
+    "_id": 454,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 63,
+      "y": 46,
+      "z": 6
+    },
+    "direction": {
+      "x": 3,
+      "y": -3,
+      "z": -6
+    },
+    "velocity": 0.4157,
+    "resource": {
+      "type": "Carbon",
+      "amount": 26
+    },
+    "nghbrs": [90, 103, 175, 342, 440, 551, 601, 629, 651]
+  }, {
+    "_id": 455,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 91,
+      "y": 24,
+      "z": 98
+    },
+    "direction": {
+      "x": 3,
+      "y": 7,
+      "z": 1
+    },
+    "velocity": 0.5547,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 186
+    },
+    "nghbrs": [108]
+  }, {
+    "_id": 457,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 60,
+      "y": 70,
+      "z": 53
+    },
+    "direction": {
+      "x": 9,
+      "y": -8,
+      "z": 3
+    },
+    "velocity": 0.9512,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 149
+    },
+    "nghbrs": [51, 73, 195, 695]
+  }, {
+    "_id": 461,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 49,
+      "y": 97,
+      "z": 85
+    },
+    "direction": {
+      "x": -5,
+      "y": -1,
+      "z": 7
+    },
+    "velocity": 0.7554,
+    "resource": {
+      "type": "Carbon",
+      "amount": 115
+    },
+    "nghbrs": [114, 263, 334, 471, 692]
+  }, {
+    "_id": 463,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 62,
+      "y": 8,
+      "z": 20
+    },
+    "direction": {
+      "x": -4,
+      "y": 0,
+      "z": -2
+    },
+    "velocity": 0.5081,
+    "resource": {
+      "type": "Helium",
+      "amount": 316
+    },
+    "nghbrs": [49, 200, 314, 345, 478, 595, 602, 612, 668]
+  }, {
+    "_id": 469,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 50,
+      "y": 47,
+      "z": 51
+    },
+    "direction": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "velocity": 0.1892,
+    "resource": {
+      "type": "Helium",
+      "amount": 65
+    },
+    "nghbrs": [22, 55, 119, 285, 514]
+  }, {
+    "_id": 471,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 49,
+      "y": 93,
+      "z": 99
+    },
+    "direction": {
+      "x": -6,
+      "y": 6,
+      "z": 7
+    },
+    "velocity": 0.3399,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 489
+    },
+    "nghbrs": [91, 114, 263, 461, 692]
+  }, {
+    "_id": 477,
+    "type": 1,
+    "size": 0.8,
+    "position": {
+      "x": 12,
+      "y": 55,
+      "z": 47
+    },
+    "direction": {
+      "x": -3,
+      "y": 8,
+      "z": 0
+    },
+    "velocity": 0.1295,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 470
+    },
+    "nghbrs": [425, 446, 610, 696]
+  }, {
+    "_id": 478,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 62,
+      "y": 13,
+      "z": 4
+    },
+    "direction": {
+      "x": 8,
+      "y": -2,
+      "z": -8
+    },
+    "velocity": 0.5398,
+    "resource": {
+      "type": "Carbon",
+      "amount": 121
+    },
+    "nghbrs": [49, 200, 345, 406, 463, 595, 612, 624, 629]
+  }, {
+    "_id": 499,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 9,
+      "y": 35,
+      "z": 68
+    },
+    "direction": {
+      "x": 0,
+      "y": 2,
+      "z": 5
+    },
+    "velocity": 0.8174,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 447
+    },
+    "nghbrs": [359]
+  }, {
+    "_id": 503,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 20,
+      "y": 4,
+      "z": 55
+    },
+    "direction": {
+      "x": 5,
+      "y": -8,
+      "z": 8
+    },
+    "velocity": 0.2835,
+    "resource": {
+      "type": "Carbon",
+      "amount": 212
+    },
+    "nghbrs": [33, 305, 318, 510, 533, 622, 686]
+  }, {
+    "_id": 504,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 96,
+      "y": 86,
+      "z": 74
+    },
+    "direction": {
+      "x": -9,
+      "y": -10,
+      "z": 9
+    },
+    "velocity": 0.8619,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 78
+    },
+    "nghbrs": [360, 574, 645]
+  }, {
+    "_id": 510,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 7,
+      "y": 8,
+      "z": 43
+    },
+    "direction": {
+      "x": 9,
+      "y": 10,
+      "z": -5
+    },
+    "velocity": 0.9236,
+    "resource": {
+      "type": "Carbon",
+      "amount": 229
+    },
+    "nghbrs": [305, 318, 330, 503, 686]
+  }, {
+    "_id": 512,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 55,
+      "y": 20,
+      "z": 72
+    },
+    "direction": {
+      "x": -2,
+      "y": -6,
+      "z": 4
+    },
+    "velocity": 0.1956,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 94
+    },
+    "nghbrs": [29, 207, 346, 685]
+  }, {
+    "_id": 514,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 56,
+      "y": 41,
+      "z": 65
+    },
+    "direction": {
+      "x": 5,
+      "y": -2,
+      "z": 2
+    },
+    "velocity": 0.3582,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 192
+    },
+    "nghbrs": [22, 55, 310, 469, 685, 729]
+  }, {
+    "_id": 525,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 64,
+      "y": 95,
+      "z": 71
+    },
+    "direction": {
+      "x": 4,
+      "y": 4,
+      "z": -8
+    },
+    "velocity": 0.4974,
+    "resource": {
+      "type": "Carbon",
+      "amount": 384
+    },
+    "nghbrs": [72, 334, 401, 627]
+  }, {
+    "_id": 532,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 65,
+      "y": 14,
+      "z": 89
+    },
+    "direction": {
+      "x": -5,
+      "y": 2,
+      "z": -5
+    },
+    "velocity": 0.3816,
+    "resource": {
+      "type": "Carbon",
+      "amount": 126
+    },
+    "nghbrs": [281]
+  }, {
+    "_id": 533,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 27,
+      "y": 14,
+      "z": 57
+    },
+    "direction": {
+      "x": 10,
+      "y": 6,
+      "z": 8
+    },
+    "velocity": 0.4238,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 232
+    },
+    "nghbrs": [33, 100, 318, 319, 379, 503, 622]
+  }, {
+    "_id": 535,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 81,
+      "y": 51,
+      "z": 82
+    },
+    "direction": {
+      "x": 5,
+      "y": 9,
+      "z": -4
+    },
+    "velocity": 0.9027,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 60
+    },
+    "nghbrs": [6, 108, 310, 631]
+  }, {
+    "_id": 536,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 87,
+      "y": 7,
+      "z": 38
+    },
+    "direction": {
+      "x": -8,
+      "y": 2,
+      "z": 6
+    },
+    "velocity": 0.6912,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 13
+    },
+    "nghbrs": [160]
+  }, {
+    "_id": 545,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 35,
+      "y": 92,
+      "z": 33
+    },
+    "direction": {
+      "x": -4,
+      "y": 7,
+      "z": -6
+    },
+    "velocity": 0.5909,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 428
+    },
+    "nghbrs": [14]
+  }, {
+    "_id": 551,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 62,
+      "y": 63,
+      "z": 8
+    },
+    "direction": {
+      "x": -3,
+      "y": 9,
+      "z": 0
+    },
+    "velocity": 0.6168,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 457
+    },
+    "nghbrs": [454, 601]
+  }, {
+    "_id": 559,
+    "type": 1,
+    "size": 1.8,
+    "position": {
+      "x": 11,
+      "y": 17,
+      "z": 6
+    },
+    "direction": {
+      "x": 4,
+      "y": -3,
+      "z": 3
+    },
+    "velocity": 0.7495,
+    "resource": {
+      "type": "Helium",
+      "amount": 139
+    },
+    "nghbrs": [111, 167, 278, 396, 660]
+  }, {
+    "_id": 563,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 79,
+      "y": 40,
+      "z": 22
+    },
+    "direction": {
+      "x": 6,
+      "y": 4,
+      "z": 9
+    },
+    "velocity": 0.7688,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 278
+    },
+    "nghbrs": [90, 126, 175, 228, 253, 342, 406, 440, 661]
+  }, {
+    "_id": 574,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 88,
+      "y": 83,
+      "z": 77
+    },
+    "direction": {
+      "x": -1,
+      "y": 2,
+      "z": -6
+    },
+    "velocity": 0.5751,
+    "resource": {
+      "type": "Carbon",
+      "amount": 357
+    },
+    "nghbrs": [360, 401, 504, 627]
+  }, {
+    "_id": 576,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 19,
+      "y": 82,
+      "z": 25
+    },
+    "direction": {
+      "x": -9,
+      "y": -2,
+      "z": 6
+    },
+    "velocity": 0.6495,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 36
+    },
+    "nghbrs": [235, 244, 313, 702]
+  }, {
+    "_id": 577,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 67,
+      "y": 69,
+      "z": 78
+    },
+    "direction": {
+      "x": 0,
+      "y": -3,
+      "z": -2
+    },
+    "velocity": 0.4726,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 405
+    },
+    "nghbrs": [10, 86, 195, 627]
+  }, {
+    "_id": 579,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 36,
+      "y": 46,
+      "z": 73
+    },
+    "direction": {
+      "x": -10,
+      "y": 9,
+      "z": 4
+    },
+    "velocity": 0.793,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 88
+    },
+    "nghbrs": [22, 61, 432, 591, 685]
+  }, {
+    "_id": 580,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 11,
+      "y": 61,
+      "z": 27
+    },
+    "direction": {
+      "x": 6,
+      "y": 5,
+      "z": -3
+    },
+    "velocity": 0.9964,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 91
+    },
+    "nghbrs": [182, 244, 610]
+  }, {
+    "_id": 582,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 36,
+      "y": 82,
+      "z": 72
+    },
+    "direction": {
+      "x": 4,
+      "y": -6,
+      "z": 5
+    },
+    "velocity": 0.9427,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 406
+    },
+    "nghbrs": [93, 334, 352]
+  }, {
+    "_id": 591,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 42,
+      "y": 50,
+      "z": 80
+    },
+    "direction": {
+      "x": 10,
+      "y": 1,
+      "z": 8
+    },
+    "velocity": 0.1062,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 95
+    },
+    "nghbrs": [432, 579, 685]
+  }, {
+    "_id": 595,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 48,
+      "y": 12,
+      "z": 17
+    },
+    "direction": {
+      "x": -2,
+      "y": 7,
+      "z": -2
+    },
+    "velocity": 0.4777,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 77
+    },
+    "nghbrs": [49, 134, 200, 444, 463, 478, 613, 668, 722]
+  }, {
+    "_id": 601,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 61,
+      "y": 60,
+      "z": 2
+    },
+    "direction": {
+      "x": -4,
+      "y": -2,
+      "z": -3
+    },
+    "velocity": 0.2202,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 282
+    },
+    "nghbrs": [454, 551, 651]
+  }, {
+    "_id": 602,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 72,
+      "y": 5,
+      "z": 21
+    },
+    "direction": {
+      "x": -1,
+      "y": -1,
+      "z": 0
+    },
+    "velocity": 0.2231,
+    "resource": {
+      "type": "Carbon",
+      "amount": 175
+    },
+    "nghbrs": [160, 200, 463, 612]
+  }, {
+    "_id": 610,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 6,
+      "y": 66,
+      "z": 36
+    },
+    "direction": {
+      "x": 2,
+      "y": 8,
+      "z": -4
+    },
+    "velocity": 0.2996,
+    "resource": {
+      "type": "Helium",
+      "amount": 403
+    },
+    "nghbrs": [169, 313, 446, 477, 580]
+  }, {
+    "_id": 612,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 68,
+      "y": 20,
+      "z": 17
+    },
+    "direction": {
+      "x": 2,
+      "y": 2,
+      "z": -3
+    },
+    "velocity": 0.086,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 95
+    },
+    "nghbrs": [49, 126, 175, 200, 253, 342, 345, 406, 463, 478, 602, 624, 629, 661, 668]
+  }, {
+    "_id": 613,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 33,
+      "y": 1,
+      "z": 15
+    },
+    "direction": {
+      "x": -8,
+      "y": -9,
+      "z": 3
+    },
+    "velocity": 0.2749,
+    "resource": {
+      "type": "Helium",
+      "amount": 369
+    },
+    "nghbrs": [134, 444, 595, 722, 724]
+  }, {
+    "_id": 615,
+    "type": 1,
+    "size": 2,
+    "position": {
+      "x": 88,
+      "y": 79,
+      "z": 1
+    },
+    "direction": {
+      "x": -10,
+      "y": -8,
+      "z": 4
+    },
+    "velocity": 0.5209,
+    "resource": {
+      "type": "Carbon",
+      "amount": 265
+    },
+    "nghbrs": []
+  }, {
+    "_id": 622,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 25,
+      "y": 6,
+      "z": 53
+    },
+    "direction": {
+      "x": 1,
+      "y": 2,
+      "z": 10
+    },
+    "velocity": 0.4586,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 227
+    },
+    "nghbrs": [33, 100, 305, 318, 503, 533, 686]
+  }, {
+    "_id": 623,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 10,
+      "y": 62,
+      "z": 66
+    },
+    "direction": {
+      "x": -9,
+      "y": 9,
+      "z": 8
+    },
+    "velocity": 0.311,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 128
+    },
+    "nghbrs": [61, 352, 425, 446]
+  }, {
+    "_id": 624,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 74,
+      "y": 17,
+      "z": 1
+    },
+    "direction": {
+      "x": 5,
+      "y": 8,
+      "z": -10
+    },
+    "velocity": 0.8995,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 83
+    },
+    "nghbrs": [126, 345, 406, 478, 612]
+  }, {
+    "_id": 627,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 72,
+      "y": 82,
+      "z": 67
+    },
+    "direction": {
+      "x": 3,
+      "y": -4,
+      "z": 1
+    },
+    "velocity": 0.1135,
+    "resource": {
+      "type": "Carbon",
+      "amount": 135
+    },
+    "nghbrs": [72, 195, 401, 525, 574, 577, 659, 713]
+  }, {
+    "_id": 629,
+    "type": 1,
+    "size": 1,
+    "position": {
+      "x": 59,
+      "y": 31,
+      "z": 9
+    },
+    "direction": {
+      "x": -10,
+      "y": -3,
+      "z": 10
+    },
+    "velocity": 0.6423,
+    "resource": {
+      "type": "Helium",
+      "amount": 334
+    },
+    "nghbrs": [24, 49, 90, 175, 179, 342, 345, 406, 440, 454, 478, 612]
+  }, {
+    "_id": 631,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 66,
+      "y": 52,
+      "z": 92
+    },
+    "direction": {
+      "x": -4,
+      "y": 5,
+      "z": 9
+    },
+    "velocity": 0.9308,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 108
+    },
+    "nghbrs": [10, 86, 535, 729]
+  }, {
+    "_id": 634,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 88,
+      "y": 63,
+      "z": 40
+    },
+    "direction": {
+      "x": -9,
+      "y": 9,
+      "z": 0
+    },
+    "velocity": 0.8681,
+    "resource": {
+      "type": "Helium",
+      "amount": 378
+    },
+    "nghbrs": []
+  }, {
+    "_id": 645,
+    "type": 1,
+    "size": 0.7,
+    "position": {
+      "x": 94,
+      "y": 73,
+      "z": 60
+    },
+    "direction": {
+      "x": 8,
+      "y": -6,
+      "z": 6
+    },
+    "velocity": 0.8219,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 356
+    },
+    "nghbrs": [504, 659]
+  }, {
+    "_id": 651,
+    "type": 1,
+    "size": 0.9,
+    "position": {
+      "x": 73,
+      "y": 47,
+      "z": 1
+    },
+    "direction": {
+      "x": -3,
+      "y": 2,
+      "z": 3
+    },
+    "velocity": 0.6014,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 59
+    },
+    "nghbrs": [90, 103, 175, 342, 440, 454, 601]
+  }, {
+    "_id": 656,
+    "type": 1,
+    "size": 1.4,
+    "position": {
+      "x": 67,
+      "y": 89,
+      "z": 1
+    },
+    "direction": {
+      "x": -10,
+      "y": 10,
+      "z": 0
+    },
+    "velocity": 0.3833,
+    "resource": {
+      "type": "Helium",
+      "amount": 283
+    },
+    "nghbrs": [15, 223, 264, 365]
+  }, {
+    "_id": 658,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 95,
+      "y": 58,
+      "z": 7
+    },
+    "direction": {
+      "x": -9,
+      "y": -7,
+      "z": 2
+    },
+    "velocity": 0.5899,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 351
+    },
+    "nghbrs": [103, 228, 394]
+  }, {
+    "_id": 659,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 79,
+      "y": 83,
+      "z": 54
+    },
+    "direction": {
+      "x": -7,
+      "y": -5,
+      "z": 0
+    },
+    "velocity": 0.1824,
+    "resource": {
+      "type": "Carbon",
+      "amount": 73
+    },
+    "nghbrs": [25, 627, 645, 713]
+  }, {
+    "_id": 660,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 12,
+      "y": 33,
+      "z": 17
+    },
+    "direction": {
+      "x": -2,
+      "y": 7,
+      "z": -8
+    },
+    "velocity": 0.0017,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 171
+    },
+    "nghbrs": [117, 165, 396, 559, 665]
+  }, {
+    "_id": 661,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 73,
+      "y": 29,
+      "z": 27
+    },
+    "direction": {
+      "x": -9,
+      "y": 4,
+      "z": -6
+    },
+    "velocity": 0.2673,
+    "resource": {
+      "type": "Helium",
+      "amount": 57
+    },
+    "nghbrs": [49, 90, 126, 175, 225, 253, 342, 406, 452, 563, 612]
+  }, {
+    "_id": 665,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 11,
+      "y": 44,
+      "z": 7
+    },
+    "direction": {
+      "x": -4,
+      "y": 3,
+      "z": 7
+    },
+    "velocity": 0.6315,
+    "resource": {
+      "type": "Helium",
+      "amount": 154
+    },
+    "nghbrs": [117, 182, 660, 684]
+  }, {
+    "_id": 668,
+    "type": 1,
+    "size": 1.7,
+    "position": {
+      "x": 53,
+      "y": 11,
+      "z": 25
+    },
+    "direction": {
+      "x": 1,
+      "y": 10,
+      "z": 9
+    },
+    "velocity": 0.5237,
+    "resource": {
+      "type": "Carbon",
+      "amount": 451
+    },
+    "nghbrs": [49, 134, 200, 314, 463, 595, 612]
+  }, {
+    "_id": 684,
+    "type": 1,
+    "size": 1.5,
+    "position": {
+      "x": 7,
+      "y": 62,
+      "z": 6
+    },
+    "direction": {
+      "x": -5,
+      "y": 1,
+      "z": 0
+    },
+    "velocity": 0.0036,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 215
+    },
+    "nghbrs": [182, 665]
+  }, {
+    "_id": 685,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 47,
+      "y": 34,
+      "z": 75
+    },
+    "direction": {
+      "x": 10,
+      "y": -2,
+      "z": -6
+    },
+    "velocity": 0.8484,
+    "resource": {
+      "type": "Carbon",
+      "amount": 53
+    },
+    "nghbrs": [22, 29, 346, 512, 514, 579, 591, 729]
+  }, {
+    "_id": 686,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 12,
+      "y": 10,
+      "z": 44
+    },
+    "direction": {
+      "x": -6,
+      "y": 0,
+      "z": -1
+    },
+    "velocity": 0.8217,
+    "resource": {
+      "type": "Helium",
+      "amount": 418
+    },
+    "nghbrs": [305, 318, 330, 503, 510, 622]
+  }, {
+    "_id": 692,
+    "type": 1,
+    "size": 1.2,
+    "position": {
+      "x": 40,
+      "y": 83,
+      "z": 92
+    },
+    "direction": {
+      "x": -10,
+      "y": -1,
+      "z": 6
+    },
+    "velocity": 0.3922,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 143
+    },
+    "nghbrs": [2, 93, 114, 263, 461, 471]
+  }, {
+    "_id": 695,
+    "type": 1,
+    "size": 1.9,
+    "position": {
+      "x": 60,
+      "y": 68,
+      "z": 36
+    },
+    "direction": {
+      "x": 0,
+      "y": -10,
+      "z": 9
+    },
+    "velocity": 0.302,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 132
+    },
+    "nghbrs": [73, 180, 457]
+  }, {
+    "_id": 696,
+    "type": 1,
+    "size": 1.3,
+    "position": {
+      "x": 13,
+      "y": 47,
+      "z": 50
+    },
+    "direction": {
+      "x": -4,
+      "y": -6,
+      "z": -4
+    },
+    "velocity": 0.394,
+    "resource": {
+      "type": "Nitrogen",
+      "amount": 380
+    },
+    "nghbrs": [425, 446, 477]
+  }, {
+    "_id": 702,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 16,
+      "y": 91,
+      "z": 10
+    },
+    "direction": {
+      "x": 5,
+      "y": -7,
+      "z": 6
+    },
+    "velocity": 0.6838,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 363
+    },
+    "nghbrs": [14, 576]
+  }, {
+    "_id": 713,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 64,
+      "y": 90,
+      "z": 51
+    },
+    "direction": {
+      "x": 2,
+      "y": 10,
+      "z": -10
+    },
+    "velocity": 0.3871,
+    "resource": {
+      "type": "Helium",
+      "amount": 108
+    },
+    "nghbrs": [627, 659]
+  }, {
+    "_id": 722,
+    "type": 1,
+    "size": 0.5,
+    "position": {
+      "x": 38,
+      "y": 7,
+      "z": 5
+    },
+    "direction": {
+      "x": 5,
+      "y": -5,
+      "z": -5
+    },
+    "velocity": 0.6979,
+    "resource": {
+      "type": "Oxygen",
+      "amount": 421
+    },
+    "nghbrs": [444, 595, 613]
+  }, {
+    "_id": 724,
+    "type": 1,
+    "size": 1.6,
+    "position": {
+      "x": 22,
+      "y": 2,
+      "z": 21
+    },
+    "direction": {
+      "x": 4,
+      "y": 9,
+      "z": 7
+    },
+    "velocity": 0.2105,
+    "resource": {
+      "type": "Helium",
+      "amount": 211
+    },
+    "nghbrs": [134, 613]
+  }, {
+    "_id": 729,
+    "type": 1,
+    "size": 1.1,
+    "position": {
+      "x": 61,
+      "y": 40,
+      "z": 80
+    },
+    "direction": {
+      "x": -5,
+      "y": 1,
+      "z": 10
+    },
+    "velocity": 0.744,
+    "resource": {
+      "type": "Helium",
+      "amount": 44
+    },
+    "nghbrs": [310, 514, 631, 685]
+  }, {
+    "_id": 733,
+    "type": 1,
+    "size": 0.6,
+    "position": {
+      "x": 15,
+      "y": 93,
+      "z": 61
+    },
+    "direction": {
+      "x": -4,
+      "y": 5,
+      "z": 2
+    },
+    "velocity": 0.1498,
+    "resource": {
+      "type": "Hydrogen",
+      "amount": 451
+    },
+    "nghbrs": []
+  }]
+}
