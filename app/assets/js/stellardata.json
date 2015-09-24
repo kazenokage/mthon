@@ -1,14 +1,14 @@
 var planetarycolor = {
   "color": [{
-    "hex": 0xd3dbec
+    "hex": 0xc0cbe4
   }, {
-    "hex": 0xe1e6f3
+    "hex": 0xd4dbee
   }, {
-    "hex": 0xfffff1
+    "hex": 0xffffeb
   }, {
-    "hex": 0xffffd1
+    "hex": 0xffffbd
   }, {
-    "hex": 0xfeeccc
+    "hex": 0xfee4b6
   }]
 }
 
