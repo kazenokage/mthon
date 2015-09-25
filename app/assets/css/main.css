@@ -28,6 +28,7 @@ canvas {
 .logo {
   bottom: 1em;
   right: 1em;
+
 }
 
 .infobox {
@@ -69,7 +70,7 @@ canvas {
   text-align: center;
 }
 
-.star-image {
+.star-image, img {
   width: 100%;
 }
 

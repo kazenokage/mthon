@@ -1,13 +1,14 @@
   // global vars
   var starNames = ["Alpha","Beta","Gamma","Omega"];
   var orbitAnimation = true;
+  var starSprites = {};
 
   // scene setup
   var scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0x110329, 100, 270);
 
   // camera setup
-  var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 1000 );
+  var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 10000 );
 
   // renderer setup
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -19,7 +20,22 @@
   var startMaterial = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture("assets/js/pointer-start.png"), blending: THREE.AdditiveBlending } );
   var endMaterial = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture("assets/js/pointer-end.png"), blending: THREE.AdditiveBlending } );
 
-  var starSprites = {};
+  // // draw the skybox
+  // var skyboxPrefix = "assets/img/skybox-";
+  // var directions  = ["xpos", "xneg", "ypos", "yneg", "zpos", "zneg"];
+  // var skyboxSuffix = ".png";
+	// var skyGeometry = new THREE.CubeGeometry( 5000, 5000, 5000 );
+	// var materialArray = [];
+	// for (var i = 0; i < 6; i++)
+	// 	materialArray.push( new THREE.MeshBasicMaterial({
+	// 		map: THREE.ImageUtils.loadTexture( skyboxPrefix + directions[i] + skyboxSuffix ),
+	// 		side: THREE.BackSide,
+  //     fog: false,
+  //     blending: THREE.AdditiveBlending
+	// 	}));
+	// var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
+	// var skyBox = new THREE.Mesh( skyGeometry, skyMaterial );
+	// scene.add( skyBox );
 
   // draw the stars
   for (var i = 0; i < stellarobjects.stars.length; i++) {
