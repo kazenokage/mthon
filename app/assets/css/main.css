@@ -36,7 +36,12 @@ canvas {
   width: 180px;
 }
 
-.infobox .row {
+.controlbox {
+  top: 1em;
+  right: 1em;
+}
+
+.row {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0.5em;
   margin-bottom: 2px;
@@ -47,6 +52,11 @@ canvas {
   height: 1em;
   margin-right: 0.5em;
   vertical-align: middle;
+}
+
+.icon-large {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .label {

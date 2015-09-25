@@ -1,5 +1,6 @@
   // global vars
   var starNames = ["Alpha","Beta","Gamma","Omega"];
+  var orbitAnimation = true;
 
   // scene setup
   var scene = new THREE.Scene();
@@ -7,7 +8,6 @@
 
   // camera setup
   var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 1000 );
-  camera.up.set( 1, 0, 0 );
 
   // renderer setup
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -214,12 +214,27 @@
   path.push(stellarobjects.stars[0]._id);
 
   var moveCamera = function(posx,posy,posz) {
-    var timer = Date.now() * 0.00005;
-    camera.position.x = Math.cos( timer ) * 120;
-    camera.position.z = Math.sin( timer ) * 120;
-    //camera.lookAt(new THREE.Vector3(posx,posy,posz));
+    if (orbitAnimation) {
+      var timer = Date.now() * 0.00005;
+      camera.position.x = Math.cos( timer ) * 120;
+      camera.position.z = Math.sin( timer ) * 120;
+      //camera.lookAt(new THREE.Vector3(posx,posy,posz));
+    }
     controls.center.set(posx, posy, posz);
+    controls.noRotate = controls.noZoom = orbitAnimation;
     controls.update();
   }
 
   render();
+
+  $(document).ready(function() {
+    // bind controls
+    $('#playControl').on('click', function() {
+      orbitAnimation = !orbitAnimation;
+      if (orbitAnimation) {
+        $('#playControl').html("<img src='assets/img/icon-play.png' class='icon-large'>");
+      } else {
+        $('#playControl').html("<img src='assets/img/icon-pause.png' class='icon-large'>");
+      }
+    })
+  });
