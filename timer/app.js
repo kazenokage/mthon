@@ -1,5 +1,6 @@
 var graphloader = require('./graphloader');
 var path = require('path');
+var config = require('./config.json');
 
 var express = require('express');
 var multer = require('multer');
@@ -9,7 +10,7 @@ var upload = multer({
   dest: 'upload/'
 });
 
-var url = 'mongodb://mthon:kekkonen@ds041693.mongolab.com:41693/mthon';
+var url = config.mongolab.url;
 
 MongoClient.connect(url, function(err, db) {
   app.post('/api/algo', upload.single('algo'), function(req, res, next) {
