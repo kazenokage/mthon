@@ -1,4 +1,14 @@
 var fs = require('fs');
+var algo = require('../algo');
+var _ = require('lodash');
+
+/**
+* Helps with calculating the densities for the vertices.
+*/
+Math.cbrt = Math.cbrt || function(x) {
+  var y = Math.pow(Math.abs(x), 1/3);
+  return x < 0 ? -y : y;
+};
 // var algo = require('../algo');
 //
 // var types = ['carbon', 'helium', 'hydrogen', 'oxygen', 'nitrogen'];
@@ -129,11 +139,13 @@ var fs = require('fs');
 * Generates the graph part of the scenario.
 */
 function generateGraph(n, materials, direction) {
+  var universeSize = n / 0.00005;
+  var boundary = universeBoundary(universeSize);
   var graph = [];
   for (var i = 0; i < n; i++) {
     var v = {};
     v._id = i;
-    assignPosition(v, n);
+    assignPosition(v, n, boundary);
     assignType(v);
     if (materials) assignMaterials(v, n);
     if (direction) assignDirection(v);
@@ -153,6 +165,8 @@ function generateGraph(n, materials, direction) {
 function generateScenario(n, materials, direction, filename) {
   var scenario = {};
   scenario.stars = generateGraph(n, materials, direction);
+  scenario.endPoint = getEndPoint(scenario.stars);
+  checkGraphLength(scenario.endPoint);
   if (materials) scenario.materialsRequired = Math.floor(n/2);
   if (filename) {
     fs.writeFile(filename, JSON.stringify(scenario));
@@ -171,12 +185,16 @@ function getRandomInt(min, max) {
 /**
 * Assigns a position for the given vertex.
 */
-function assignPosition(v, size) {
+function assignPosition(v, size, boundary) {
   var p = {};
-  p.x = getRandomInt(Math.floor(-size/4), Math.floor(size/4));
-  p.y = getRandomInt(Math.floor(-size/4), Math.floor(size/4));
-  p.z = getRandomInt(Math.floor(-size/4), Math.floor(size/4));
+  p.x = getRandomInt(-boundary, boundary);
+  p.y = getRandomInt(-boundary, boundary);
+  p.z = getRandomInt(-boundary, boundary);
   v.position = p;
+}
+
+function universeBoundary(number) {
+  return Math.floor(Math.cbrt(number)/2);
 }
 
 /**
@@ -211,17 +229,20 @@ function assignType(v) {
 }
 
 /**
-*
+* Makes sure that the generated graph contains a path that is long enough.
 */
-function checkGraph() {
-  // TODO
+function checkGraphLength(endPoint) {
+  var route = algo.getPath(endPoint);
+  console.log(route);
+  console.log(route.length);
 }
 
 /**
-*
+* Picks the furthest vertex from the graph[0].
 */
-function assignEndPointForGraph() {
-  // TODO
+function getEndPoint(graph) {
+  var furthest = algo.findFurthest(_.cloneDeep(graph));
+  return furthest;
 }
 
 var args = process.argv.slice(2);
@@ -231,7 +252,7 @@ if (args.length > 0) {
   args.forEach(function(a) {
     if (a.indexOf('-size') !== -1) size = parseInt(a.split('=')[1]);
     if (a === '-m') materials = true;
-    if (a === 'd') direction = true;
+    if (a === '-d') direction = true;
     if (a.indexOf('-fn') !== -1) filename = a.split('=')[1];
   });
   generateScenario(size, materials, direction, filename);

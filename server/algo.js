@@ -76,6 +76,20 @@ function getPath(end) {
   return ret.reverse();
 }
 
+function findFurthest(graph) {
+  var completedGraph = calcDistDijkstra(graph, graph[0]);
+  var furthest = completedGraph.reduce(function(prev, cur, idx, arr) {
+    if (cur.dist > prev.dist && cur.dist !== Number.MAX_VALUE) {
+      return cur;
+    } else {
+      return prev;
+    }
+  }, completedGraph[0]);
+  return furthest;
+}
+
 module.exports = {
-  algo: findPathBetween
+  algo: findPathBetween,
+  findFurthest: findFurthest,
+  getPath: getPath
 }
