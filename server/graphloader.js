@@ -5,7 +5,8 @@ function loadGraph(number, callback) {
   var file = path.join(__dirname, './graphs/stellardata_'+number+'.json');
   fs.readFile(file, 'utf8', function(err, data) {
     stars = JSON.parse(data).stars;
-    callback(stars);
+    end = JSON.parse(data).end;
+    callback(stars, end);
   });
 }
 

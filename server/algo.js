@@ -11,6 +11,13 @@ function distStars(s1, s2) {
 }
 
 function calcDistDijkstra(graph, source, target) {
+  graph.forEach(function(star) {
+    star.nghbrs = graph.filter(function(pn) {
+      return distStars(star, pn) <= 35 && pn !== star;
+    })
+    .map(function(n) { return n._id} );
+  });
+
 
   function relax(u, v) {
     if (v.dist > u.dist + distStars(u, v)) {

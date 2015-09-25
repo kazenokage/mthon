@@ -94,7 +94,7 @@
   function distStars(s1, s2) {
     return dist(s1.position.x, s1.position.y, s1.position.z, s2.position.x, s2.position.y, s2.position.z);
   }
-  // stellarobjects.stars.forEach(function(s) { s.nghbrs = reduced.filter(function(pn) { return distStars(s, pn) < 30; }});
+  // stellarobjects.stars.forEach(function(s) { s.nghbrs = stellarobjects.stars.filter(function(pn) { return distStars(s, pn) <= 25; })});
   // stellarobjects.stars.forEach(function(s) { s.nghbrs = s.nghbrs.map(function(n) { return n._id }) });
 
   function getStar(id) {
@@ -102,12 +102,12 @@
     return ret.length > 0 ? ret[0] : undefined;
   }
 
-  stellarobjects.stars.forEach(function(s) {
-    s.nghbrs.forEach(function(nId) {
-      var nstar = getStar(nId);
-      drawLineBetween(s, nstar, 0x0000ff);
-    });
-  });
+  // stellarobjects.stars.forEach(function(s) {
+  //   s.nghbrs.forEach(function(nId) {
+  //     var nstar = getStar(nId);
+  //     drawLineBetween(s, nstar, 0x0000ff);
+  //   });
+  // });
 
   function drawLineBetween(first, second, color) {
     var color = color || 0xFF0000;
