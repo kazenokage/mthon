@@ -13,6 +13,7 @@ var upload = multer({
 var url = config.mongolab.url;
 
 MongoClient.connect(url, function(err, db) {
+  if (err) console.log(err);
   app.post('/api/algo', upload.single('algo'), function(req, res, next) {
     testFile(req.file, res, req.body.group);
   });
@@ -26,11 +27,8 @@ MongoClient.connect(url, function(err, db) {
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
-    graphloader.loadGraph(1, function(stars) {
+    graphloader.loadGraph(1, function(stars, goal) {
       var curTime = new Date();
-      var goal = stars.filter(function(s) { 
-        return s._id === 167
-      })[0];
       var answ = algo.algo(stars, stars[0], goal);
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
@@ -38,7 +36,7 @@ MongoClient.connect(url, function(err, db) {
         res.send('HEY, THINK CHEATING IS FUNNY?');
       } else {
         res.send(answ);
-        testLarge();
+        // testLarge();
       }
     });
 
