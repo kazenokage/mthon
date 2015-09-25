@@ -10,14 +10,18 @@ function distStars(s1, s2) {
   return dist(s1.position.x, s1.position.y, s1.position.z, s2.position.x, s2.position.y, s2.position.z);
 }
 
-function calcDistDijkstra(graph, source, target) {
+function findPathBetween(graph, source, target) {
+  var solved = calcDistDijkstra(graph, source);
+  return getPath(target);
+}
+
+function calcDistDijkstra(graph, source) {
   graph.forEach(function(star) {
     star.nghbrs = graph.filter(function(pn) {
       return distStars(star, pn) <= 35 && pn !== star;
     })
     .map(function(n) { return n._id} );
   });
-
 
   function relax(u, v) {
     if (v.dist > u.dist + distStars(u, v)) {
@@ -59,7 +63,7 @@ function calcDistDijkstra(graph, source, target) {
     });
   }
 
-  return getPath(target);
+  return s;
 }
 
 function getPath(end) {
@@ -73,5 +77,5 @@ function getPath(end) {
 }
 
 module.exports = {
-  algo: calcDistDijkstra
+  algo: findPathBetween
 }
