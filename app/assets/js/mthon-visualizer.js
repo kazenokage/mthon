@@ -1,7 +1,9 @@
+  // global vars
+  var starNames = ["Alpha","Beta","Gamma","Omega"];
 
   // scene setup
   var scene = new THREE.Scene();
-  //´scene.fog = new THREE.Fog(0x110329, 180, 350);
+  scene.fog = new THREE.Fog(0x110329, 100, 270);
 
   // camera setup
   var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -96,6 +98,13 @@
       var second = getStar(path[pidx+1]);
       starSprites[first._id].scale.x = starSprites[first._id].scale.y = 5;
       starSprites[second._id].scale.x = starSprites[second._id].scale.y = 5;
+      $('#current-position').html("x:"+second.position.x+", y:"+second.position.y+", z:"+second.position.z);
+      $('#current-elements').html("<div class='row'><img src='assets/img/icon-"+second.resource.type.toLowerCase()+".png' class='icon'></img><span class='label'>"+second.resource.amount+" units</span></div>")
+      var starname = starNames[Math.floor(Math.random()*starNames.length)]+"-"+second._id;
+      var startype = Math.floor(Math.random() * (5 - 1)) + 1;
+      console.log(startype);
+      $('#current-star-name').html(starname);
+      $('#current-star-image').html("<div class='image-container'><img src='assets/img/star-type-"+startype+".png' class='star-image'></div>");
       if (pidx === 0) {
         var startSprite = new THREE.Sprite( startMaterial );
         var endSprite = new THREE.Sprite( endMaterial );

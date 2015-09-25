@@ -1,0 +1,68 @@
+html, body {
+  font-family: "Titillium Web", "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 100;
+  line-height: 0.4em;
+}
+
+body {
+  margin: 0;
+  background-image: url('../js/scene-bg.png');
+  background-size: 100%;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  right: 0;
+}
+
+.hud {
+  z-index: 9999;
+  position: absolute;
+}
+
+.logo {
+  bottom: 1em;
+  right: 1em;
+}
+
+.infobox {
+  top: 1em;
+  left: 1em;
+  width: 180px;
+}
+
+.infobox .row {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5em;
+  margin-bottom: 2px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.label {
+  font-size: 0.8em;
+  color: #c0cbe4;
+}
+
+.image-container { 
+  width: 100%;
+  text-align: center;
+}
+
+.star-image {
+  width: 100%;
+}
+
+.ignore-padding {
+  padding:0 !important;
+}
