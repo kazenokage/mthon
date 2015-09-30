@@ -1,17 +1,3 @@
-var planetarycolor = {
-  "color": [{
-    "hex": 0xc0cbe4
-  }, {
-    "hex": 0xd4dbee
-  }, {
-    "hex": 0xffffeb
-  }, {
-    "hex": 0xffffbd
-  }, {
-    "hex": 0xfee4b6
-  }]
-}
-
 var stellarobjects = {
   "stars": [{
     "_id": 2,

@@ -19,6 +19,19 @@
   var starspritemap = THREE.ImageUtils.loadTexture("assets/js/glow.png");
   var startMaterial = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture("assets/js/pointer-start.png"), blending: THREE.AdditiveBlending } );
   var endMaterial = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture("assets/js/pointer-end.png"), blending: THREE.AdditiveBlending } );
+  var planetarycolor = {
+    "color": [{
+      "hex": 0xc0cbe4
+    }, {
+      "hex": 0xd4dbee
+    }, {
+      "hex": 0xffffeb
+    }, {
+      "hex": 0xffffbd
+    }, {
+      "hex": 0xfee4b6
+    }]
+  }
 
   // // draw the skybox
   // var skyboxPrefix = "assets/img/skybox-";
@@ -70,7 +83,7 @@
   stellarobjects.stars.forEach(function(s) {
     s.nghbrs.forEach(function(nId) {
       var nstar = getStar(nId);
-      drawLineBetween(s, nstar, 0x291a41, 1);
+      drawLineBetween(s, nstar, 0x2c1d46, 1);
     });
   });
 
@@ -241,8 +254,6 @@
     controls.update();
   }
 
-  render();
-
   $(document).ready(function() {
     // bind controls
     $('#playControl').on('click', function() {
@@ -253,4 +264,7 @@
         $('#playControl').html("<img src='assets/img/icon-pause.png' class='icon-large'>");
       }
     })
+
+    render();
+
   });
