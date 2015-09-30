@@ -16,12 +16,17 @@ function findPathBetween(graph, source, target) {
   return getPath(target);
 }
 
-function calcDistDijkstra(graph, source) {
+function constructNeighbors(graph) {
   graph.forEach((star) => {
     star.nghbrs = graph
       .filter((pn) => distStars(star, pn) <= 30 && pn !== star)
       .map((n) => n._id);
   });
+  return graph;
+}
+
+function calcDistDijkstra(graph, source) {
+  constructNeighbors(graph);
 
   function relax(u, v) {
     if (v.dist > u.dist + distStars(u, v)) {
@@ -85,5 +90,6 @@ function findFurthest(graph) {
 module.exports = {
   algo: findPathBetween,
   findFurthest: findFurthest,
-  getPath: getPath
+  getPath: getPath,
+  constructNeighbors: constructNeighbors
 }

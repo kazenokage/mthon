@@ -1,21 +1,27 @@
+'use strict';
+
 var graphloader = require('./graphloader');
 var path = require('path');
 var config = require('./config.json');
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var multer = require('multer');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
+var dijkstra = require('./algo');
 var upload = multer({
   dest: 'upload/'
 });
 
 var url = config.mongolab.url;
+app.use(bodyParser.json()); // for parsing application/json
 
 MongoClient.connect(url, function(err, db) {
   if (err) console.log(err);
   app.post('/api/algo', upload.single('algo'), function(req, res, next) {
-    testFile(req.file, res, req.body.group);
+    testFile(req.file, res, req.body.chosenTeam);
   });
 
   app.get('/api/top', function(req, res) {
@@ -25,19 +31,46 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
+  app.post('/api/teams', function(req, res) {
+    var team = req.body;
+    db.collection('teams').insertOne(team, function(err, succ) {
+      res.send(succ.ops);
+    });
+  });
+
+  app.get('/api/teams', function(req, res) {
+    db.collection('teams').find().toArray(function(err, succ) {
+      res.send(succ);
+    });
+  });
+
+  app.delete('/api/teams/:id', function(req, res) {
+    db.collection('teams').deleteOne(
+      {'_id': ObjectId(req.params.id)},
+      function(err, succ) {
+        res.send(succ);
+      }
+    );
+  });
+
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
     graphloader.loadGraph(1, function(stars, goal) {
       var curTime = new Date();
-      var answ = algo.algo(stars, stars[0], goal);
+      var answ = algo.algo(stars, stars[0], getStar(goal, stars));
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
-      if (!checkAnsw(stars, answ)) {
-        res.send('HEY, THINK CHEATING IS FUNNY?');
-      } else {
-        res.send(answ);
+      // if (!checkAnsw(stars, answ)) {
+      //   res.send('HEY, THINK CHEATING IS FUNNY?');
+      // } else {
+      if (checkAnsw(dijkstra.constructNeighbors(stars), answ)) {
+        console.log('YEEHAA');
+      };
+      // console.log(answ);
+      // console.log(total / 1000);
+      res.send({anticheat: true, distance: 1, speed: total / 1000 });
         // testLarge();
-      }
+      // }
     });
 
     function testLarge() {
