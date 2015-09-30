@@ -1,11 +1,12 @@
 function getStar(id, stars) {
-  var ret = stars.filter(function(s) { return s._id === id });
+  var ret = stars.filter((s) => s._id === id);
   return ret.length > 0 ? ret[0] : undefined;
 }
 
 function dist(x1,y1,z1,x2,y2,z2) {
   return Math.sqrt( Math.pow(x2-x1,2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1,2));
 }
+
 function distStars(s1, s2) {
   return dist(s1.position.x, s1.position.y, s1.position.z, s2.position.x, s2.position.y, s2.position.z);
 }
@@ -16,11 +17,10 @@ function findPathBetween(graph, source, target) {
 }
 
 function calcDistDijkstra(graph, source) {
-  graph.forEach(function(star) {
-    star.nghbrs = graph.filter(function(pn) {
-      return distStars(star, pn) <= 35 && pn !== star;
-    })
-    .map(function(n) { return n._id} );
+  graph.forEach((star) => {
+    star.nghbrs = graph
+      .filter((pn) => distStars(star, pn) <= 30 && pn !== star)
+      .map((n) => n._id);
   });
 
   function relax(u, v) {
@@ -31,13 +31,7 @@ function calcDistDijkstra(graph, source) {
   }
 
   function getCheapest(q) {
-    return q.reduce(function(prev, cur, idx, arr) {
-      if (prev.dist > cur.dist) {
-        return cur;
-      } else {
-        return prev;
-      }
-    }, q[0]);
+    return q.reduce((prev, cur) => prev.dist > cur.dist ? cur : prev, q[0]);
   }
 
   source.dist = 0;
