@@ -7,8 +7,8 @@
 	<body>
 		<div class="infobox hud">
 			<div class="row"><h2>Path total</h2></div>
-			<div class="row"><img src="assets/img/icon-clock.png" class="icon"></img><span class="label">ms</span></div>
-			<div class="row"><img src="assets/img/icon-length.png" class="icon"></img><span class="label">su</span></div>
+			<div class="row"><img src="assets/img/icon-clock.png" class="icon"></img><span class="label" id="algo-runtime">ms</span></div>
+			<div class="row"><img src="assets/img/icon-length.png" class="icon"></img><span class="label" id="algo-length">su</span></div>
 			<div class="row"><img src="assets/img/icon-hydrogen.png" class="icon"></img><span class="label">units</span></div>
 			<div class="row"><img src="assets/img/icon-helium.png" class="icon"></img><span class="label">units</span></div>
 			<div class="row"><img src="assets/img/icon-carbon.png" class="icon"></img><span class="label">units</span></div>
@@ -22,13 +22,39 @@
 				<div class="row"><span class="label">No elements</span></div>
 			</div>
 		</div>
-		<div class="controlbox hud"><div class="row" id="playControl"><img src="assets/img/icon-play.png" class="icon-large"></div></div>
+		<div class="controlbox hud"><div class="row" id="playControl"><img src="assets/img/icon-pause.png" class="icon-large"></div></div>
 		<div class="logo hud"><img src="assets/img/mthon-logo.png"></div>
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
     <script src="assets/js/orbitcontrols.js"></script>
+		<script src="assets/js/threex.windowresize.js"></script>
 		<script src='assets/js/tween.js'></script>
-    <script src="assets/js/stellardata.json" type="text/javascript"></script>
+		<!-- select the relevant dataset here-->
+		<script src="assets/js/stellardata.json" type="text/javascript"></script>
 		<script src="assets/js/mthon-visualizer.js"></script>
+		<script src="assets/js/algo.js"></script>
+		<script>
+				// do some preparations
+				// set the active dataset
+				var currentDataset = stellarobjects;
+
+				// init performance data
+				var performanceData = {}
+
+				// run algo locally
+				performanceData.startTime = performance.now();
+				var currentSolution = MTHONALGO.solveStellarRoute(currentDataset);
+				performanceData.endTime = performance.now();
+				performanceData.runTime = (performanceData.endTime - performanceData.startTime).toFixed(4);
+
+				// debug data
+				currentSolution.path = [167, 559, 660, 117, 182, 580, 610, 446, 623, 61, 2];
+				currentSolution.connections = [[2,5],[2,15]];
+
+				// visualize the data!
+				MTHON.initVisualizer(currentDataset, currentSolution, performanceData);
+				MTHON.buildScene();
+				MTHON.render();
+		</script>
 	</body>
 </html>

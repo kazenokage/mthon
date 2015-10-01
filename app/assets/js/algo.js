@@ -2,14 +2,23 @@
 // Algorithm template
 // www.solinor.fi
 
+var MTHONALGO = MTHONALGO || {};
+
 // required base function for finding the path in <dataset>
-function solveStellarRoute(dataset) {
-    // path consists of id:s of the stars in the path, in linear order start->end
-    // example: [23,654,234,2,64]
-    var path = [];
+MTHONALGO.solveStellarRoute = function(dataset) {
+    var solution = {
+      // path consists of id:s of the stars in the path, in linear order start->end
+      // example: [23,654,234,2,64]
+      path: [],
+      // connections consits of individual connections between stars, identified by pairs of star ids
+      // example: [[1,56],[38,62]]
+      connections: []
+    }
+
+    // do your magic here
 
     // required return
-    return path;
+    return solution;
 }
 
 // add your support functions in here
