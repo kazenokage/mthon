@@ -35,7 +35,7 @@ canvas {
 .infobox {
   top: 1em;
   left: 1em;
-  width: 180px;
+  width: 400px;
 }
 
 .controlbox {
@@ -49,6 +49,19 @@ canvas {
   margin-bottom: 2px;
 }
 
+.col {
+  float:left;
+}
+
+.col-3 {
+  width: 25%;
+}
+.col-6 {
+  width: 50%;
+}
+.clear {
+  clear:both;
+}
 .icon {
   width: 1em;
   height: 1em;
