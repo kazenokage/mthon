@@ -1,0 +1,13 @@
+extends ./layout.jade
+
+block title
+  title Solinor mthon - Submissions
+  
+block content
+  h1.
+    Find the submissions for each team here
+    
+  ul
+    each t in teams
+      li
+        a(href="/submissions/"+t._id)= t.name

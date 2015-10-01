@@ -3,6 +3,7 @@
 var graphloader = require('./graphloader');
 var path = require('path');
 var config = require('./config.json');
+var fs = require('fs');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -11,12 +12,15 @@ var app = express();
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
 var dijkstra = require('./algo');
+var marked = require('marked');
 var upload = multer({
   dest: 'upload/'
 });
 
 var url = config.mongolab.url;
 app.use(bodyParser.json()); // for parsing application/json
+app.set('view engine', 'jade');
+app.set('views', './views')
 
 MongoClient.connect(url, function(err, db) {
   if (err) console.log(err);
@@ -25,7 +29,6 @@ MongoClient.connect(url, function(err, db) {
   });
 
   app.get('/api/top', function(req, res) {
-    var ret = [];
     db.collection('results').find().toArray(function(err, docs) {
       res.send(docs);
     });
@@ -53,6 +56,35 @@ MongoClient.connect(url, function(err, db) {
     );
   });
 
+  app.get('/home', function(req, res) {
+    fs.readFile('./markdown/instructions.md', 'utf-8', function(err, text) {
+      res.render('index', {md: marked(text)});
+    });
+  });
+
+  app.get('/scores', function(req, res) {
+    res.render('scores');
+  });
+
+  app.get('/submit', function(req, res) {
+    res.render('submit');
+  });
+
+  app.get('/submissions', function(req, res) {
+    db.collection('teams').find().toArray(function(err, docs) {
+      res.render('submissions', {teams: docs});
+    });
+  });
+
+  app.get('/submissions/:id', function(req, res) {
+    db.collection('results').find({group: req.params.id}).toArray(function(err, docs) {
+      db.collection('teams').find({_id: ObjectId(req.params.id)}).toArray(function(err, team) {
+        res.render('submissions_by', {submissions: docs, team: team[0]});
+      });
+    });
+  });
+
+
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
     graphloader.loadGraph(1, function(stars, goal) {
@@ -60,32 +92,26 @@ MongoClient.connect(url, function(err, db) {
       var answ = algo.algo(stars, stars[0], getStar(goal, stars));
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
-      // if (!checkAnsw(stars, answ)) {
-      //   res.send('HEY, THINK CHEATING IS FUNNY?');
-      // } else {
       if (checkAnsw(dijkstra.constructNeighbors(stars), answ)) {
         console.log('YEEHAA');
-      };
-      // console.log(answ);
-      // console.log(total / 1000);
-      res.send({anticheat: true, distance: 1, speed: total / 1000 });
-        // testLarge();
-      // }
+        testLarge(res);
+      } else {
+        res.send({angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'});
+      }
     });
 
-    function testLarge() {
-      graphloader.loadGraph(2, function(stars) {
+    function testLarge(res) {
+      graphloader.loadGraph(2, function(stars, goal) {
         console.log('Testing against 10k stars');
         var curTime = new Date();
-        var goal = stars.filter(function(s) { 
-          return s._id === 8294
-        })[0];
-        var answ = algo.algo(stars, stars[0], goal);
+        var answ = algo.algo(stars, stars[0], getStar(goal, stars));
         var endTime = new Date();
         var total = (endTime.getTime() - curTime.getTime()) / 1000;
-        var length = goal.dist;
+        var length = getStar(goal, stars).dist;
         db.collection('results').insertOne({group: g, time: total, routeLength: length});
         console.log('10k test done');
+        console.log({total: total, dist: length, answ: answ});
+        res.send({anticheat: true, distance: length, speed: total});
       });
     }
   }

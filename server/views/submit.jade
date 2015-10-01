@@ -1,0 +1,54 @@
+extends ./layout.jade
+
+block title
+  title Solinor mthon - submit your answer
+
+block content
+  #upload-area
+    form(id="uploadForm" enctype="multipart/form-data" action="/api/algo" method="post" style="background-color: white;")
+      p(style="display: inline-block; margin: 0 3em 0 0; padding: 0;").
+        Upload your algorithm here
+      input(type="file" name="algo")
+      select(id="teams" name="chosenTeam")
+      input(type="submit" value="Submit" name="algo")
+
+  #after-submission
+    p.
+      You did it!
+    p.
+      Your results will soon appear here
+
+    p.
+      Pass the anticheat: <span id="anticheat"></span></p>
+    p.
+      10K path distance: <span id="length"></span>
+    p.
+      10K path speed: <span id="speed"></span>
+
+  script.
+    $(document).ready(function() {
+      $('#after-submission').hide();
+      $.get('/api/teams', function(res) {
+        res.forEach(function(t) {
+          var opt = $('<option value="'+t._id+'">'+t.name+'</option>');
+          $('#teams').append(opt);
+        });
+      });
+
+      $('#uploadForm').submit(function() {
+        $('#upload-area').slideUp();
+        $('#after-submission').slideDown();
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+          success: function(response) {
+            $('#anticheat').html(response.anticheat ? 'Yes' : 'No');
+            $('#length').html(response.distance);
+            $('#speed').html(response.speed + ' seconds');
+            console.log(response);
+          }
+        });
+        return false;
+      });
+    });
