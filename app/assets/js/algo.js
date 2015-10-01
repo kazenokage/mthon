@@ -12,7 +12,9 @@ MTHONALGO.solveStellarRoute = function(dataset) {
       path: [],
       // connections consits of individual connections between stars, identified by pairs of star ids
       // example: [[1,56],[38,62]]
-      connections: []
+      connections: [],
+      // length of the path
+      length: 0
     }
 
     // do your magic here

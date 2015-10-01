@@ -7,7 +7,8 @@ MTHON.globals = {
   dataset : {},
   performance : {},
   starSprites : {},
-  animationSpeed : 10000
+  animationSpeed : 10000,
+  mode: 'local'
 }
 
 MTHON.textures = {
@@ -59,8 +60,10 @@ MTHON.initVisualizer = function(data,solution,performance) {
   MTHON.globals.connections = solution.connections;
   MTHON.globals.performance = performance;
   // render non-webgl static elements
-  $('#algo-runtime').html(MTHON.globals.performance.runTime+' s');
-  $('#algo-length').html(MTHON.globals.path.length +' su');
+  if (MTHON.globals.mode === 'local') {
+    $('#algo-runtime').html(MTHON.globals.performance.runTime+' s');
+    $('#algo-length').html(MTHON.globals.path.length +' su');
+  }
 }
 
 MTHON.buildScene = function() {
@@ -150,11 +153,15 @@ MTHON.drawLine = function(x1,y1,z1,x2,y2,z2,color,width) {
 }
 
 MTHON.updateInfo = function(star) {
-  $('#current-position').html("x:"+star.position.x+", y:"+star.position.y+", z:"+star.position.z);
-  $('#current-elements').html("<div class='row'><img src='assets/img/icon-"+star.resource.type.toLowerCase()+".png' class='icon'></img><span class='label'>"+star.resource.amount+" units</span></div>");
-  var startype = star.type || Math.floor(Math.random() * (5 - 1)) + 1;
-  $('#current-star-image').html("<div class='image-container'><img src='assets/img/star-type-"+startype+".png' class='star-image'></div>");
-  $('#current-star-name').html(MTHON.toolkit.generateName(star));
+  if (MTHON.globals.mode === 'local') {
+    $('#current-position').html("x:"+star.position.x+", y:"+star.position.y+", z:"+star.position.z);
+    $('#current-elements').html("<div class='row'><img src='assets/img/icon-"+star.resource.type.toLowerCase()+".png' class='icon'></img><span class='label'>"+star.resource.amount+" units</span></div>");
+    var startype = star.type || Math.floor(Math.random() * (5 - 1)) + 1;
+    $('#current-star-image').html("<div class='image-container'><img src='assets/img/star-type-"+startype+".png' class='star-image'></div>");
+    $('#current-star-name').html(MTHON.toolkit.generateName(star));
+    var current = parseInt($('#total-'+star.resource.type.toLowerCase()).html());
+    $('#total-'+star.resource.type.toLowerCase()).html((current+star.resource.amount)+' units');
+  }
 }
 
 MTHON.moveCamera = function(posx,posy,posz) {
@@ -177,7 +184,7 @@ MTHON.toolkit = {
   },
   generateName : function(star) {
     var starNames = ["Alpha","Beta","Gamma","Omega","Vega","Sirius"];
-    var starEnds = ["A","C","J","K","N","S"];
+    var starEnds = ["A","C","K","N","S"];
     return starNames[Math.floor(Math.random()*starNames.length)]+"-"+star._id+starEnds[Math.floor(Math.random()*starEnds.length)];
   }
 }
