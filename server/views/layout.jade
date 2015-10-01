@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    link(href='/assets/css/github-markdown.css', rel='stylesheet')
+    link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js")
+    block title
+      title Default title
+  body
+    .container
+      include ./navbar.jade
+      block content
