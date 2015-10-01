@@ -1,0 +1,163 @@
+<html>
+
+<head>
+  <title>mthon algorithm submission</title>
+  <style>
+    .logo { z-index: 9999; bottom:0; right:0; position: absolute; margin-right:1em; margin-bottom: 1em;}
+  </style>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+  <div class="logo">
+    <img src="assets/img/mthon-logo.png">
+  </div>
+
+  <div id="upload-area">
+    <form id="uploadForm" enctype="multipart/form-data" action="/api/algo" method="post" style="background-color: white;">
+      <p style="display: inline-block; margin: 0 3em 0 0; padding: 0;">Upload your algorithm here</p>
+      <input type="file" name="algo" />
+      <!-- <input type="text" name="group" placeholder="the name of your group"></input> -->
+      <select id="teams" name="chosenTeam"></select>
+      <input type="submit" value="Submit" name="algo">
+    </form>
+  </div>
+
+  <div id="after-submission">
+    <p>You did it!</p>
+    <p>Your results will soon appear here</p>
+
+    <p>Pass the anticheat: <span id="anticheat"></span></p>
+    <p>10K path distance: <span id="length"></span></p>
+    <p>10K path speed: <span id="speed"></span></p>
+  </div>
+
+  <div id="results">
+  </div>
+</div>
+</body>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+<script>
+
+  var MthonTopList = (function() {
+
+    var results = $('#results');
+
+    function getStats(callback) {
+      $.get('/api/top', function(result) {
+        callback(result);
+      });
+    }
+
+    function getTeams(callback) {
+      $.get('/api/teams', function(result) {
+        callback(result);
+      });
+    }
+
+    function teamBestResult(team, stats) {
+      var teamStats = stats.filter(function(s) {
+        return s.group._id === team._id;
+      });
+      var best = _.min(teamStats, function(ts) {
+        return ts.time;
+      });
+      if (best === Infinity) {
+        best = {};
+      }
+      return best;
+    }
+
+    function constructList(stats, teams) {
+      var table = constructTable();
+      $('#results').append(table);
+      var tableBody = $('#team-entries');
+      stats.forEach(function(s) {
+        s.group = _.find(teams, function(t) {
+          return t._id === s.group;
+        });
+      });
+
+      teams.forEach(function(t) {
+        t.best = teamBestResult(t, stats);
+        var entry = constructTeamEntry(t);
+        tableBody.append(entry);
+      });
+    }
+
+    function constructTeamEntry(team) {
+      return $('<tr> \
+        <td> \
+        '+team.name+' \
+        </td> \
+        <td> \
+        '+(team.best.routeLength || NaN)+' \
+        </td> \
+        <td> \
+        '+(team.best.time || NaN)+' \
+        </td> \
+      </tr>')
+    }
+
+    function constructTable() {
+      return $('<table class="table"> \
+          <thead> \
+            <tr> \
+              <th>Name</th> \
+              <th>Distance</th> \
+              <th>Time</th> \
+            </tr> \
+          </thead> \
+          <tbody id="team-entries"> \
+          </tbody> \
+      </table>');
+    }
+
+    var initList = function() {
+      getTeams(function(teams) {
+        getStats(function(stats) {
+          constructList(stats, teams);
+        });
+      });
+    };
+
+    return {
+      initList: initList
+    }
+
+  })();
+
+  MthonTopList.initList();
+
+  $(document).ready(function() {
+    $('#after-submission').hide();
+    $.get('/api/teams', function(res) {
+      res.forEach(function(t) {
+        var opt = $('<option value="'+t._id+'">'+t.name+'</option>');
+        $('#teams').append(opt);
+      });
+    });
+
+    $('#uploadForm').submit(function() {
+      $('#upload-area').slideUp();
+      $('#after-submission').slideDown();
+      $(this).ajaxSubmit({
+        error: function(xhr) {
+          status('Error: ' + xhr.status);
+        },
+        success: function(response) {
+          $('#anticheat').html(response.anticheat ? 'Yes' : 'No');
+          $('#length').html(response.distance);
+          $('#speed').html(response.speed + ' seconds');
+          console.log(response);
+        }
+      });
+      return false;
+    });
+  });
+</script>
+</html>

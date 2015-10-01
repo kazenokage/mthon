@@ -1,0 +1,74 @@
+<html ng-app="mthonAdmin">
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+  <style>
+    .list-teams p {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>mthon admin area</h1>
+  <p>p.s. PUT is for pansies</p>
+  <div ng-controller="teamCtrl">
+    <h2>Manage teams</h2>
+    <ul>
+      <li class="list-teams" ng-repeat="t in teams">
+        <p>{{t.name}}</p>
+        <button ng-click="deleteTeam(t)">Obliterate</button>
+        <ul>
+          <li ng-repeat="m in t.members">
+            <p>{{m}}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="add-team">
+      <form>
+        <input type="text" placeholder="team name goes here" ng-model="newTeam.name"></input>
+        <ul>
+          <li ng-repeat="m in newTeam.members">{{m}}</li>
+        </ul>
+        <div class="add-member">
+          <input type="text" placeholder="member goes here" ng-model="newTeam.newMember"></input>
+          <button ng-click="addMember()">Add member</button>
+        </div>
+      </form>
+      <button ng-click="addTeam()">Submit team</button>
+    </div>
+  </div>
+  <script>
+    angular.module('mthonAdmin', [])
+    .controller('teamCtrl', function($scope, $http) {
+      $scope.addTeam = function() {
+        $http.post('/api/teams', $scope.newTeam).then(function(response) {
+          $scope.teams.push(response.data[0]);
+        });
+        $scope.newTeam = {};
+      };
+
+      $scope.addMember = function() {
+        if (!$scope.newTeam.members) {
+          $scope.newTeam.members = [];
+        }
+        $scope.newTeam.members.push($scope.newTeam.newMember);
+        $scope.newTeam.newMember = '';
+      };
+
+      $scope.deleteTeam = function(team) {
+        $http.delete('/api/teams/'+team._id, function(response) {
+          $scope.getTeams();
+        });
+      };
+
+      $scope.getTeams = function() {
+        $http.get('/api/teams').then(function(response) {
+          $scope.teams = response.data;
+        });
+      };
+      $scope.getTeams();
+    });
+  </script>
+</body>
+</html>

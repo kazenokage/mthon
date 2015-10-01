@@ -1,0 +1,66 @@
+<html>
+<head>
+  <link rel="stylesheet" href="assets/css/github-markdown.css">
+  <style>
+      .markdown-body {
+          min-width: 200px;
+          max-width: 790px;
+          margin: 0 auto;
+          padding: 30px;
+      }
+      .logo { z-index: 9999; bottom:0; right:0; position: fixed; margin-right:1em; margin-bottom: 1em;}
+  </style>
+</head>
+
+<body>
+  <div class="logo"><img src="assets/img/mthon-logo.png"></div>
+  <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-your-guide-to-solinor-mthon" class="anchor" href="#your-guide-to-solinor-mthon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Your guide to Solinor mthon</h1>
+
+  <h2><a id="user-content-the-task" class="anchor" href="#the-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Task</h2>
+
+  <p>You will be given a JSON representation of a graph and two vertices (a, b) that can be found from it. Your task is to find the shortest path between these two vertices with an algorithm that is as fast as possible. Others tasks might follow.</p>
+
+  <h2><a id="user-content-the-data" class="anchor" href="#the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Data</h2>
+
+  <p>Each vertex has an id, and x, y, and z coordinates. The maximum distance between two vertices is at most 30 units. Calculating the neighbors for each vertex is your job (inspecting the data might help you to do this faster).</p>
+
+  <h3><a id="user-content-data-sample" class="anchor" href="#data-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data sample</h3>
+
+  <pre><code>{
+    "stars": [{
+      "_id": 2,
+      "position": {
+        "x": 33,
+        "y": 69,
+        "z": 91
+      }
+    }, {
+      "_id": 5,
+      "position": {
+        "x": 93,
+        "y": 18,
+        "z": 70
+      }
+    },
+    ...
+    ]
+  }
+  </code></pre>
+
+  <h2><a id="user-content-how-to-develop" class="anchor" href="#how-to-develop" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to develop</h2>
+
+  <p>You can download the package . It contains multiple files but you should only worry about the one called algo.js. Inside it is a place where you can develop your algorithm. You can expect the data to look like what was shown above. The algorithm's output should be an array of ids that form the path from a to b.</p>
+
+  <p>Sample answer: <code>[0, 15, 77, 14, 12, 75]</code> </p>
+
+  <p>In order to test your algorithm locally, open the index.html file from the package, open the developer tools of your browser and find the JavaScript console (you might need to enable the dev-tools for your browser, Google and the organizers can help you with this).</p>
+
+  <h2><a id="user-content-how-to-submit" class="anchor" href="#how-to-submit" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to submit</h2>
+
+  <p>Go to mthon.solinor.com/viz, and find the submission form from the top of the page. Remember to choose your own team from the dropdown! Press submit only once after choosing your algo.js file. You will get a response whether your algorithm is performing correctly or not. Or you might crash our system (it's easy to get up and running again, no worries).</p>
+
+  <h3><a id="user-content-algojs" class="anchor" href="#algojs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algo.js</h3>
+  </article>
+</body>
+
+</html>

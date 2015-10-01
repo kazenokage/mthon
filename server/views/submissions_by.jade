@@ -1,0 +1,13 @@
+extends ./layout.jade
+
+block title
+  title
+    | Solinor mthon - Submissions by 
+    =team.name
+  
+block content
+  ul
+    each s in submissions
+      li
+        p='Time: ' + s.time + ' seconds'
+        p='Distance: ' + s.routeLength  + ' units'

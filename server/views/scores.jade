@@ -1,0 +1,102 @@
+extends ./layout.jade
+
+block title
+  title Solinor mthon - submit your answer
+
+block content
+  #results
+
+  script.
+
+    var MthonTopList = (function() {
+
+      var results = $('#results');
+
+      function getStats(callback) {
+        $.get('/api/top', function(result) {
+          callback(result);
+        });
+      }
+
+      function getTeams(callback) {
+        $.get('/api/teams', function(result) {
+          callback(result);
+        });
+      }
+
+      function teamBestResult(team, stats) {
+        var teamStats = stats.filter(function(s) {
+          return s.group._id === team._id;
+        });
+        var best = _.min(teamStats, function(ts) {
+          return ts.time;
+        });
+        if (best === Infinity) {
+          best = {};
+        }
+        return best;
+      }
+
+      function constructList(stats, teams) {
+        var table = constructTable();
+        $('#results').append(table);
+        var tableBody = $('#team-entries');
+        stats.forEach(function(s) {
+          s.group = _.find(teams, function(t) {
+            return t._id === s.group;
+          });
+        });
+
+        teams.forEach(function(t) {
+          t.best = teamBestResult(t, stats);
+          var entry = constructTeamEntry(t);
+          tableBody.append(entry);
+        });
+      }
+
+      function constructTeamEntry(team) {
+        return $('<tr> \
+          <td> \
+          '+team.name+' \
+          </td> \
+          <td> \
+          '+(team.best.routeLength || NaN)+' \
+          </td> \
+          <td> \
+          '+(team.best.time || NaN)+' \
+          </td> \
+        </tr>')
+      }
+
+      function constructTable() {
+        return $('<table class="table"> \
+            <thead> \
+              <tr> \
+                <th>Name</th> \
+                <th>Distance</th> \
+                <th>Time</th> \
+              </tr> \
+            </thead> \
+            <tbody id="team-entries"> \
+            </tbody> \
+        </table>');
+      }
+
+      var initList = function() {
+        getTeams(function(teams) {
+          getStats(function(stats) {
+            constructList(stats, teams);
+          });
+        });
+      };
+
+      return {
+        initList: initList
+      }
+
+    })();
+
+
+    $(document).ready(function() {
+      MthonTopList.initList();
+    });
