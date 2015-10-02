@@ -69,6 +69,12 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
+  app.get('/home', function(req, res) {
+    fs.readFile('./markdown/instructions.md', 'utf-8', function(err, text) {
+      res.render('index', {md: marked(text)});
+    });
+  });
+
   app.get('/scores', function(req, res) {
     res.render('scores');
   });
@@ -94,7 +100,7 @@ MongoClient.connect(url, function(err, db) {
   app.get('/mthonzip', function(req, res) {
     res.sendFile('views/mthon.zip', {root: __dirname});
   });
-  
+
   app.get('/viz', function(req, res) {
     res.sendFile('views/viz.html', {root: __dirname});
   });
