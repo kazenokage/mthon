@@ -16,6 +16,26 @@ function findPathBetween(graph, source, target) {
   return getPath(target);
 }
 
+function calcDistance(path, stars, res) {
+  if (res) {
+    resources = {};
+    ['carbon', 'helium', 'hydrogen', 'oxygen', 'nitrogen'].forEach((r) => { resources[r] = 0; });
+  }
+
+  var d = 0;
+  for (var i = 0; i < path.length-1; i++) {
+    var currentStar = getStar(path[i], stars);
+    var nextStar = getStar(path[i+1], stars);
+    var distance = distStars(currentStar, nextStar);
+    d += distance;
+  }
+  return d;
+}
+
+function calcRes(star, resources) {
+  resources[star.resource.type] += star.resource.amount;
+}
+
 function constructNeighbors(graph) {
   graph.forEach((star) => {
     star.nghbrs = graph
@@ -91,5 +111,6 @@ module.exports = {
   algo: findPathBetween,
   findFurthest: findFurthest,
   getPath: getPath,
-  constructNeighbors: constructNeighbors
+  constructNeighbors: constructNeighbors,
+  calcDistance: calcDistance
 }

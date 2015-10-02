@@ -56,7 +56,7 @@ MongoClient.connect(url, function(err, db) {
     );
   });
 
-  app.get('/home', function(req, res) {
+  app.get('/', function(req, res) {
     fs.readFile('./markdown/instructions.md', 'utf-8', function(err, text) {
       res.render('index', {md: marked(text)});
     });
@@ -84,7 +84,7 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
-  app.get('/mthonzip', function(req, res) {
+  app.get('/mthonzip', function(req, res) {
     res.sendFile('views/mthon.zip', {root: __dirname});
   });
 
@@ -96,7 +96,6 @@ MongoClient.connect(url, function(err, db) {
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
       if (checkAnsw(dijkstra.constructNeighbors(stars), answ)) {
-        console.log('YEEHAA');
         testLarge(res);
       } else {
         res.send({angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'});
@@ -104,17 +103,17 @@ MongoClient.connect(url, function(err, db) {
     });
 
     function testLarge(res) {
-      graphloader.loadGraph(2, function(stars, goal) {
-        console.log('Testing against 10k stars');
+      graphloader.loadGraph(3, function(stars, goal) {
+        console.log('Testing against 25k stars');
         var curTime = new Date();
         var answ = algo.algo(stars, stars[0], getStar(goal, stars));
         var endTime = new Date();
         var total = (endTime.getTime() - curTime.getTime()) / 1000;
-        var length = getStar(goal, stars).dist;
-        db.collection('results').insertOne({group: g, time: total, routeLength: length});
-        console.log('10k test done');
-        console.log({total: total, dist: length, answ: answ});
-        res.send({anticheat: true, distance: length, speed: total});
+        var distance = algo.calcDistance(answ, stars);
+        db.collection('results').insertOne({group: g, time: total, routeLength: distance});
+        console.log('25k test done');
+        console.log({total: total, dist: distance, answ: answ});
+        res.send({anticheat: true, distance: distance, speed: total});
       });
     }
   }
