@@ -109,6 +109,7 @@ MTHON.drawPath = function(start,end) {
   // let's set the actual path up
   var first = MTHON.toolkit.getStar(MTHON.globals.path[start]);
   var second = MTHON.toolkit.getStar(MTHON.globals.path[end]);
+
   var position = {x:first.position.x,y:first.position.y,z:first.position.z,size:second.size};
   var target = {x:second.position.x,y:second.position.y,z:second.position.z,size:6};
   // create the line
