@@ -1,4 +1,4 @@
-{
+{"dataset": {
   "stars": [{
     "_id": 0,
     "position": {
@@ -2001,4 +2001,5 @@
     "type": 0
   }],
   "endPoint": 69
+}
 }

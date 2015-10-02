@@ -107,12 +107,12 @@ MongoClient.connect(url, function(err, db) {
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
-    graphloader.loadGraph(1, function(stars, goal) {
+    graphloader.loadGraph(1, function(dataset) {
       var curTime = new Date();
-      var answ = algo.algo(stars, stars[0], getStar(goal, stars));
+      var answ = algo.algo(dataset);
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
-      if (checkAnsw(dijkstra.constructNeighbors(stars), answ)) {
+      if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ)) {
         // var g = generator.generateGraph(500, true, true);
         // var a = algo.algo(g.stars, g.stars[0], g.endPoint);
         // emitAlgorithm({graph: g, answer: a});
@@ -123,13 +123,13 @@ MongoClient.connect(url, function(err, db) {
     });
 
     function testLarge(res) {
-      graphloader.loadGraph(3, function(stars, goal) {
+      graphloader.loadGraph(3, function(dataset) {
         console.log('Testing against 25k stars');
         var curTime = new Date();
-        var answ = algo.algo(stars, stars[0], getStar(goal, stars));
+        var answ = algo.algo(dataset);
         var endTime = new Date();
         var total = (endTime.getTime() - curTime.getTime()) / 1000;
-        var distance = algo.calcDistance(answ, stars);
+        var distance = dijkstra.calcDistance(answ, dataset.stars);
         db.collection('results').insertOne({group: g, time: total, routeLength: distance});
         console.log('25k test done');
         console.log({total: total, dist: distance, answ: answ});
