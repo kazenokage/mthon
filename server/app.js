@@ -84,6 +84,9 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
+  app.get('/mthonzip', function(req, res) {
+    res.sendFile('views/mthon.zip', {root: __dirname});
+  });
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);

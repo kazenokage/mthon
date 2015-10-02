@@ -40,7 +40,7 @@ Each vertex has an id, and x, y, and z coordinates. The maximum distance between
 * Using git would make sense, but it's up to your team to decide if you're sensible enough.
 
 ### Local developing
-You can download the package <HERE>. It contains multiple files but you should only worry about the one called algo.js. Inside it is a place where you can develop your algorithm. You can expect the data to look like what was shown above. The algorithm's output should be an array of ids that form the path from a to b.
+You can download the package [HERE](/mthonzip). It contains multiple files but you should only worry about the one called algo.js. Inside it is a place where you can develop your algorithm. You can expect the data to look like what was shown above. The algorithm's output should be an array of ids that form the path from a to b.
 
 Sample answer: `[0, 15, 77, 14, 12, 75]`
 
