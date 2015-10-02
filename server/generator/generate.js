@@ -27,6 +27,7 @@ function generateGraph(n, materials, direction) {
   var graph = [];
   for (var i = 0; i < n; i++) {
     var v = {};
+    v.size = getRandomInt(5, 10) / 10;
     v._id = i;
     assignPosition(v, n, boundary);
     assignType(v);
@@ -83,7 +84,7 @@ function universeBoundary(number) {
 * Assigns a material type and amount for the given vertex.
 */
 function assignMaterials(v, size) {
-  var types = ['carbon', 'helium', 'hydrogen', 'oxygen', 'nitrogen'];
+  var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
   var resource = {
     type: types[getRandomInt(0, 5)],
     amount: Math.floor(Math.random() * (size/8))
@@ -107,7 +108,7 @@ function assignDirection(v) {
 * Assign a type from 0 to 4, used to color the vertex.
 */
 function assignType(v) {
-  v.type = getRandomInt(0, 5);
+  v.type = getRandomInt(1, 6);
 }
 
 /**
@@ -115,8 +116,8 @@ function assignType(v) {
 */
 function checkGraphLength(endPoint) {
   var route = algo.getPath(endPoint);
-  console.log(route);
-  console.log(route.length);
+  // console.log(route);
+  // console.log(route.length);
 }
 
 /**
