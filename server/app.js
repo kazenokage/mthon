@@ -98,7 +98,7 @@ MongoClient.connect(url, function(err, db) {
   });
 
   app.get('/mthonzip', function(req, res) {
-    res.sendFile('views/mthon.zip', {root: __dirname});
+    res.sendFile('views/mthon_fix.zip', {root: __dirname});
   });
 
   app.get('/viz', function(req, res) {
