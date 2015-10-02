@@ -13,6 +13,9 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
 var dijkstra = require('./algo');
 var marked = require('marked');
+var generator = require('./generator/generate');
+var socketS = require('http').createServer();
+var io = require('socket.io')(socketS);
 var upload = multer({
   dest: 'upload/'
 });
@@ -27,6 +30,11 @@ MongoClient.connect(url, function(err, db) {
   app.post('/api/algo', upload.single('algo'), function(req, res, next) {
     testFile(req.file, res, req.body.chosenTeam);
   });
+
+  var emitAlgorithm = function(msg) {
+    console.log(':(');
+  };
+
 
   app.get('/api/top', function(req, res) {
     db.collection('results').find().toArray(function(err, docs) {
@@ -87,6 +95,10 @@ MongoClient.connect(url, function(err, db) {
   app.get('/mthonzip', function(req, res) {
     res.sendFile('views/mthon.zip', {root: __dirname});
   });
+  
+  app.get('/viz', function(req, res) {
+    res.sendFile('views/viz.html', {root: __dirname});
+  });
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
@@ -96,7 +108,10 @@ MongoClient.connect(url, function(err, db) {
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
       if (checkAnsw(dijkstra.constructNeighbors(stars), answ)) {
-        testLarge(res);
+        var g = generator.generateGraph(500, true, true);
+        var a = algo.algo(g.stars, g.stars[0], g.endPoint);
+        emitAlgorithm({graph: g, answer: a});
+        //testLarge(res);
       } else {
         res.send({angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'});
       }
@@ -142,6 +157,17 @@ MongoClient.connect(url, function(err, db) {
     var host = server.address().address;
     var port = server.address().port;
     console.log('Example app listening at http://%s:%s', host, port);
+  });
+
+  io.listen(server);
+
+
+  io.sockets.on('connection', function(socket) {
+    io.emit('testo', {test: 'foo'});
+    emitAlgorithm = function(msg) {
+      console.log(":D");
+      io.emit('smallpass', msg);
+    };
   });
 
   console.log("Connected correctly to server.");
