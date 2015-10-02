@@ -29,6 +29,7 @@ function generateGraph(n, materials, direction) {
     var v = {};
     v.size = getRandomInt(5, 10) / 10;
     v._id = i;
+    v.velocity = Math.random();
     assignPosition(v, n, boundary);
     assignType(v);
     if (materials) assignMaterials(v, n);
@@ -48,14 +49,29 @@ function generateGraph(n, materials, direction) {
 */
 function generateScenario(n, materials, direction, filename) {
   var scenario = {};
+  var path = {};
   scenario.stars = generateGraph(n, materials, direction);
-  scenario.endPoint = getEndPoint(scenario.stars);
-  if (materials) scenario.materialsRequired = Math.floor(n/2);
-  if (filename) {
-    fs.writeFile(filename, JSON.stringify(scenario));
-  } else {
-    return scenario;
-  }
+  scenario.endPoint = getEndPoint(scenario.stars, path);
+  console.log("length: " + path.nodes);
+  if (materials) scenario.materialsRequired = Math.floor(path.nodes/5*80);
+  console.log("materials required: " + scenario.materialsRequired);
+
+  // if (checkIfAnswerCanBeFound(scenario)) {
+    if (filename) {
+      fs.writeFile(filename, JSON.stringify(scenario));
+    } else {
+      return scenario;
+    }
+  // } else {
+  //   console.log("tough luck");
+  // }
+}
+
+/**
+*
+*/
+function checkIfAnswerCanBeFound(scenario) {
+
 }
 
 /**
@@ -87,7 +103,7 @@ function assignMaterials(v, size) {
   var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
   var resource = {
     type: types[getRandomInt(0, 5)],
-    amount: Math.floor(Math.random() * (size/8))
+    amount: getRandomInt(0, 101)
   };
   v.resource = resource;
 }
@@ -114,18 +130,17 @@ function assignType(v) {
 /**
 * Makes sure that the generated graph contains a path that is long enough.
 */
-function checkGraphLength(endPoint) {
+function checkGraphLength(endPoint, path) {
   var route = algo.getPath(endPoint);
-  // console.log(route);
-  // console.log(route.length);
+  path.nodes = route.length;
 }
 
 /**
 * Picks the furthest vertex from the graph[0].
 */
-function getEndPoint(graph) {
+function getEndPoint(graph, path) {
   var furthest = algo.findFurthest(_.cloneDeep(graph));
-  checkGraphLength(furthest);
+  checkGraphLength(furthest, path);
   return furthest._id;
 }
 
