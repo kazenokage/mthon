@@ -133,7 +133,7 @@ MongoClient.connect(url, function(err, db) {
     });
 
     function testLarge(res) {
-      graphloader.loadGraph(1, function(dataset) {
+      graphloader.loadGraph(3, function(dataset) {
         console.log('Testing against 25k stars');
         var curTime = new Date();
         var answ = algo.algo(dataset);
