@@ -4,6 +4,23 @@ block title
   title Solinor mthon - submit your answer
 
 block content
+  h1.
+    Important!
+  p.
+    In order for our awesome server to understand your algorithm, you'll have to mutilate it a bit. To be exact, mutilate it like so:
+  pre.
+    function algorithm(dataset) {
+
+      // Your algorithm here
+
+      return [1,2,3,4]; // The path from A to B
+    }
+
+    // This bit is important!
+    module.exports = {
+      algo: algorithm
+    }
+    
   #upload-area
     form(id="uploadForm" enctype="multipart/form-data" action="/api/algo" method="post" style="background-color: white;")
       p(style="display: inline-block; margin: 0 3em 0 0; padding: 0;").
