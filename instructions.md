@@ -1,7 +1,7 @@
 # Your guide to Solinor mthon
 
 ## The Task
-You will be given a JSON representation of a graph and two vertices (a, b) that can be found from it. Your task is to find the shortest path between these two vertices with an algorithm that is as fast as possible. Others tasks might follow.
+You will be given a [JSON](http://www.json.org) representation of a graph and two vertices (a, b) that can be found from it. Your task is to find the shortest path between these two vertices with an algorithm that is as fast as possible. Others tasks might follow.
 
 ## The Data
 Each vertex has an id, and x, y, and z coordinates. The maximum distance between two vertices is at most 30 units. Calculating the neighbors for each vertex is your job (inspecting the data might help you to do this faster).
