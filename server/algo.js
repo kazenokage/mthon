@@ -13,7 +13,6 @@ function distStars(s1, s2) {
 
 function findPathBetween(graph, source, target) {
   var solved = calcDistDijkstra(graph, source);
-  console.log(getStar(target, graph));
   return getPath(target);
 }
 

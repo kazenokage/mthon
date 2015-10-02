@@ -28,7 +28,9 @@ Each vertex has an id, and x, y, and z coordinates. The maximum distance between
     }
   },
   ...
-  ]
+  ],
+  "endPoint": <endpoint's id>,
+  "materialsRequired": ???
 }
 ```
 

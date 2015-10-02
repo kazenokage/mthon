@@ -106,24 +106,34 @@ MongoClient.connect(url, function(err, db) {
   });
 
   function testFile(file, res, g) {
+    var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
+    var resources = {'Carbon': 0, 'Helium': 0, 'Hydrogen': 0, 'Oxygen': 0, 'Nitrogen': 0};
+
     var algo = require('./upload/' + file.filename);
     graphloader.loadGraph(1, function(dataset) {
       var curTime = new Date();
       var answ = algo.algo(dataset);
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
-      if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ)) {
+
+      answ.forEach((sid) => {
+        var star = getStar(sid, dataset.stars);
+        resources[star.resource.type] += star.resource.amount;
+      });
+
+      if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ, resources, dataset)) {
         // var g = generator.generateGraph(500, true, true);
         // var a = algo.algo(g.stars, g.stars[0], g.endPoint);
         // emitAlgorithm({graph: g, answer: a});
         testLarge(res);
       } else {
+        console.log('Group ' + g + ' sent an answer we cant accept');
         res.send({angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'});
       }
     });
 
     function testLarge(res) {
-      graphloader.loadGraph(3, function(dataset) {
+      graphloader.loadGraph(1, function(dataset) {
         console.log('Testing against 25k stars');
         var curTime = new Date();
         var answ = algo.algo(dataset);
@@ -138,7 +148,18 @@ MongoClient.connect(url, function(err, db) {
     }
   }
 
-  function checkAnsw(stars, answ) {
+  function checkAnsw(stars, answ, resources, dataset) {
+    // Stage 2 answer checking!
+    // console.log('Checking if the path contains enough resources: ' + dataset.materialsRequired);
+    // var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
+    // for (var i = 0; i < types.length; i++) {
+    //   console.log(resources[types[i]]);
+    //   if (resources[types[i]] < dataset.materialsRequired) {
+    //     console.log('doesnt cut it, moving back');
+    //     return false;
+    //   }
+    // }
+
     for (var i = 0; i < answ.length - 1; i++) {
       var s = getStar(answ[i], stars);
 

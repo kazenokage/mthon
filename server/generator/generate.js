@@ -52,26 +52,46 @@ function generateScenario(n, materials, direction, filename) {
   var path = {};
   scenario.stars = generateGraph(n, materials, direction);
   scenario.endPoint = getEndPoint(scenario.stars, path);
-  console.log("length: " + path.nodes);
   if (materials) scenario.materialsRequired = Math.floor(path.nodes/5*80);
   console.log("materials required: " + scenario.materialsRequired);
 
-  // if (checkIfAnswerCanBeFound(scenario)) {
+  if (checkIfAnswerCanBeFound(scenario)) {
+    scenario.dataset = {};
+    scenario.dataset.stars = scenario.stars;
+    scenario.dataset.endPoint = scenario.endPoint;
+    scenario.dataset.materialsRequired = scenario.materialsRequired;
+    delete scenario.stars;
+    delete scenario.endPoint;
+    delete scenario.materialsRequired;
     if (filename) {
       fs.writeFile(filename, JSON.stringify(scenario));
     } else {
       return scenario;
     }
-  // } else {
-  //   console.log("tough luck");
-  // }
+  } else {
+    console.log("tough luck, cant find a good route");
+  }
 }
 
 /**
-*
+* We need to make sure that it is actually possible to
 */
 function checkIfAnswerCanBeFound(scenario) {
-
+  var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
+  var resources = {'Carbon': 0, 'Helium': 0, 'Hydrogen': 0, 'Oxygen': 0, 'Nitrogen': 0};
+  var starz = _.cloneDeep(scenario.stars);
+  algo.algo(starz, starz[0], scenario.endPoint);
+  starz.forEach((s) => {
+    if (s.dist !== Number.MAX_VALUE) {
+      resources[s.resource.type] += s.resource.amount;
+    }
+  });
+  types.forEach((t) => {
+    if (resources[t] < scenario.materialsRequired) {
+      return false;
+    }
+  });
+  return true;
 }
 
 /**
