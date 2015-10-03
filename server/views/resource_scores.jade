@@ -1,0 +1,13 @@
+extends ./layout.jade
+
+block title
+  title Solinor mthon - Scores by resources
+  
+block content
+  h1.
+    Part 2
+    
+  ul
+    each t in teams
+      li
+        a(href="/submissions/"+t._id)= t.name

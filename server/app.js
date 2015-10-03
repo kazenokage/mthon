@@ -15,6 +15,7 @@ var dijkstra = require('./algo');
 var marked = require('marked');
 var generator = require('./generator/generate');
 var socketS = require('http').createServer();
+var _ = require('lodash');
 // var io = require('socket.io')(socketS);
 var upload = multer({
   dest: 'upload/'
@@ -82,6 +83,26 @@ MongoClient.connect(url, function(err, db) {
 
   app.get('/scores', function(req, res) {
     res.render('scores');
+  });
+
+  app.get('/scores/resources', function(req, res) {
+    db.collection('results').find().toArray(function(err, results) {
+      db.collection('teams').find().toArray(function(err, teams) {
+        results = results.map(function(r) {
+          r.group = _.find(teams, function(t) { return t._id == r.group; }).name;
+          return r;
+        });
+
+        results.forEach(function(r) {
+          r.totalResources = 0;
+          _.forOwn(r.resources, function(val, key) { totalResources += val; });
+        });
+
+        results.
+
+        res.render('resource_scores', {results: results, teams: teams});
+      });
+    });
   });
 
   app.get('/submit', function(req, res) {
@@ -222,6 +243,9 @@ MongoClient.connect(url, function(err, db) {
       if (!s || s.nghbrs.indexOf(answ[i + 1]) === -1) {
         console.log('path: ' + answ);
         console.log('neighborcheck failed');
+        console.log('current star: ');
+        console.log(s);
+        console.log('the failing neighbour: ' + answ[i + 1]);
         return false;
       }
     }
