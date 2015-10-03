@@ -55,8 +55,9 @@ MongoClient.connect(url, function(err, db) {
   });
 
   app.delete('/api/teams/:id', function(req, res) {
-    db.collection('teams').deleteOne(
-      {'_id': ObjectId(req.params.id)},
+    db.collection('teams').deleteOne({
+        '_id': ObjectId(req.params.id)
+      },
       function(err, succ) {
         res.send(succ);
       }
@@ -65,13 +66,17 @@ MongoClient.connect(url, function(err, db) {
 
   app.get('/', function(req, res) {
     fs.readFile('./markdown/instructions.md', 'utf-8', function(err, text) {
-      res.render('index', {md: marked(text)});
+      res.render('index', {
+        md: marked(text)
+      });
     });
   });
 
   app.get('/home', function(req, res) {
     fs.readFile('./markdown/instructions.md', 'utf-8', function(err, text) {
-      res.render('index', {md: marked(text)});
+      res.render('index', {
+        md: marked(text)
+      });
     });
   });
 
@@ -85,30 +90,40 @@ MongoClient.connect(url, function(err, db) {
 
   app.get('/submissions', function(req, res) {
     db.collection('teams').find().toArray(function(err, docs) {
-      res.render('submissions', {teams: docs});
+      res.render('submissions', {
+        teams: docs
+      });
     });
   });
 
   app.get('/submissions/:id', function(req, res) {
-    db.collection('results').find({group: req.params.id}).toArray(function(err, docs) {
-      db.collection('teams').find({_id: ObjectId(req.params.id)}).toArray(function(err, team) {
-        res.render('submissions_by', {submissions: docs, team: team[0]});
+    db.collection('results').find({
+      group: req.params.id
+    }).toArray(function(err, docs) {
+      db.collection('teams').find({
+        _id: ObjectId(req.params.id)
+      }).toArray(function(err, team) {
+        res.render('submissions_by', {
+          submissions: docs,
+          team: team[0]
+        });
       });
     });
   });
 
   app.get('/mthonzip', function(req, res) {
-    res.sendFile('views/mthon_fix.zip', {root: __dirname});
+    res.sendFile('views/mthon_fix.zip', {
+      root: __dirname
+    });
   });
 
   app.get('/viz', function(req, res) {
-    res.sendFile('views/viz.html', {root: __dirname});
+    res.sendFile('views/viz.html', {
+      root: __dirname
+    });
   });
 
   function testFile(file, res, g) {
-    var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
-    var resources = {'Carbon': 0, 'Helium': 0, 'Hydrogen': 0, 'Oxygen': 0, 'Nitrogen': 0};
-
     var algo = require('./upload/' + file.filename);
     graphloader.loadGraph(1, function(dataset) {
       var curTime = new Date();
@@ -116,39 +131,71 @@ MongoClient.connect(url, function(err, db) {
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
 
-      answ.forEach((sid) => {
-        var star = getStar(sid, dataset.stars);
-        resources[star.resource.type] += star.resource.amount;
-      });
-
-      if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ, resources, dataset)) {
+      if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ, [], dataset)) {
         // var g = generator.generateGraph(500, true, true);
         // var a = algo.algo(g.stars, g.stars[0], g.endPoint);
         // emitAlgorithm({graph: g, answer: a});
         testLarge(res);
       } else {
         console.log('Group ' + g + ' sent an answer we cant accept');
-        res.send({angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'});
+        res.send({
+          angryMessage: 'There is something fishy in your answer. Are you calculating the distance between the vertices correctly? It can be at most 30.'
+        });
       }
     });
 
     function testLarge(res) {
+      var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
+      var resources = {
+        'Carbon': 0,
+        'Helium': 0,
+        'Hydrogen': 0,
+        'Oxygen': 0,
+        'Nitrogen': 0
+      };
       graphloader.loadGraph(3, function(dataset) {
         console.log('Testing against 25k stars');
         var curTime = new Date();
         var answ = algo.algo(dataset);
         var endTime = new Date();
         var total = (endTime.getTime() - curTime.getTime()) / 1000;
+
+        answ.forEach((sid) => {
+          var star = getStar(sid, dataset.stars);
+          resources[star.resource.type] += star.resource.amount;
+        });
+
         var distance = dijkstra.calcDistance(answ, dataset.stars);
-        db.collection('results').insertOne({group: g, time: total, routeLength: distance});
+        db.collection('results').insertOne({
+          group: g,
+          time: total,
+          routeLength: distance,
+          resources: resources
+        });
         console.log('25k test done');
-        console.log({total: total, dist: distance, answ: answ});
-        res.send({anticheat: true, distance: distance, speed: total});
+        console.log({
+          total: total,
+          dist: distance,
+          answ: answ,
+          resources: resources
+        });
+        res.send({
+          anticheat: true,
+          distance: distance,
+          speed: total
+        });
       });
     }
   }
 
   function checkAnsw(stars, answ, resources, dataset) {
+    if (answ.indexOf(dataset.endPoint) === -1) {
+      return false;
+    }
+
+    if (answ.indexOf(stars[0]._id) === -1) {
+      return false;
+    }
     // Stage 2 answer checking!
     // console.log('Checking if the path contains enough resources: ' + dataset.materialsRequired);
     // var types = ['Carbon', 'Helium', 'Hydrogen', 'Oxygen', 'Nitrogen'];
