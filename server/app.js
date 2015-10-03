@@ -190,10 +190,12 @@ MongoClient.connect(url, function(err, db) {
 
   function checkAnsw(stars, answ, resources, dataset) {
     if (answ.indexOf(dataset.endPoint) === -1) {
+      console.log('path doesnt contain endpoint');
       return false;
     }
 
     if (answ.indexOf(stars[0]._id) === -1) {
+      console.log('path doesnt contain starting point');
       return false;
     }
     // Stage 2 answer checking!
@@ -211,6 +213,7 @@ MongoClient.connect(url, function(err, db) {
       var s = getStar(answ[i], stars);
 
       if (!s || s.nghbrs.indexOf(answ[i + 1]) === -1) {
+        console.log('neighborcheck failed');
         return false;
       }
     }
