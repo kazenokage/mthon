@@ -125,6 +125,7 @@ MongoClient.connect(url, function(err, db) {
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
+    console.log(algo.algo);
     graphloader.loadGraph(1, function(dataset) {
       var curTime = new Date();
       var answ = algo.algo(dataset);
@@ -160,9 +161,13 @@ MongoClient.connect(url, function(err, db) {
         var endTime = new Date();
         var total = (endTime.getTime() - curTime.getTime()) / 1000;
 
+        var visited = [];
         answ.forEach((sid) => {
-          var star = getStar(sid, dataset.stars);
-          resources[star.resource.type] += star.resource.amount;
+          if (visited.indexOf(sid) === -1) {
+            var star = getStar(sid, dataset.stars);
+            resources[star.resource.type] += star.resource.amount;
+            visited.push(sid);
+          }
         });
 
         var distance = dijkstra.calcDistance(answ, dataset.stars);
