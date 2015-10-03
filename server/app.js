@@ -88,19 +88,18 @@ MongoClient.connect(url, function(err, db) {
   app.get('/scores/resources', function(req, res) {
     db.collection('results').find().toArray(function(err, results) {
       db.collection('teams').find().toArray(function(err, teams) {
-        results = results.map(function(r) {
-          r.group = _.find(teams, function(t) { return t._id == r.group; }).name;
-          return r;
+        // results = results.map(function(r) {
+        //   r.group = _.find(teams, function(t) { return t._id == r.group; }).name;
+        //   return r;
+        // });
+
+        teams = teams.map(function(t) {
+          t.results = _.filter(results, function(r) { return r.group == t._id });
+          return t;
         });
 
-        results.forEach(function(r) {
-          r.totalResources = 0;
-          _.forOwn(r.resources, function(val, key) { totalResources += val; });
-        });
-
-        results.
-
-        res.render('resource_scores', {results: results, teams: teams});
+        console.log(teams[0]);
+        res.render('resource_scores', {teams: teams});
       });
     });
   });
@@ -248,6 +247,7 @@ MongoClient.connect(url, function(err, db) {
         console.log('the failing neighbour: ' + answ[i + 1]);
         return false;
       }
+
     }
     return true;
   }

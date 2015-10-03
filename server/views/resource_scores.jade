@@ -6,8 +6,21 @@ block title
 block content
   h1.
     Part 2
+  h2 It looks awful, I know
     
   ul
     each t in teams
       li
-        a(href="/submissions/"+t._id)= t.name
+        h3=t.name
+        ul 
+          if t.results
+            each r in t.results
+              li
+                p='time ' + r.time
+                p='route length ' + r.routeLength
+                if r.resources
+                  p='carbon: ' + r.resources.Carbon + ' / 864'
+                  p='nitro: ' + r.resources.Nitrogen + ' / 864'
+                  p='hydro: ' + r.resources.Hydrogen + ' / 864'
+                  p='oxygen: ' + r.resources.Oxygen + ' / 864'
+                  p='helium: ' + r.resources.Helium + ' / 864'
