@@ -125,13 +125,13 @@ MongoClient.connect(url, function(err, db) {
 
   function testFile(file, res, g) {
     var algo = require('./upload/' + file.filename);
-    console.log(algo.algo);
     graphloader.loadGraph(1, function(dataset) {
       var curTime = new Date();
+      console.log('algorithm started');
       var answ = algo.algo(dataset);
+      console.log('algorithm ended');
       var endTime = new Date();
       var total = endTime.getTime() - curTime.getTime();
-
       if (checkAnsw(dijkstra.constructNeighbors(dataset.stars), answ, [], dataset)) {
         // var g = generator.generateGraph(500, true, true);
         // var a = algo.algo(g.stars, g.stars[0], g.endPoint);
