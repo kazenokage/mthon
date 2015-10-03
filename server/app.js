@@ -240,7 +240,7 @@ MongoClient.connect(url, function(err, db) {
     for (var i = 0; i < answ.length - 1; i++) {
       var s = getStar(answ[i], stars);
 
-      if (!s || s.nghbrs.indexOf(answ[i + 1]) === -1) {
+      if (!s || (s.nghbrs.indexOf(answ[i + 1]) === -1) && (s._id !== answ[i+1])) {
         console.log('path: ' + answ);
         console.log('neighborcheck failed');
         console.log('current star: ');
